@@ -1,5 +1,5 @@
 local config = {}
-config.moduleName = "Crossfire configuration"
+config.moduleName = "CRSF Configuration"
 config.moduleDir = "/scripts/crossfire/"
 config.useCompiler = true
 
