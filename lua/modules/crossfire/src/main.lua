@@ -23,7 +23,7 @@ local function close()
 end
 
 local function init()
-        system.registerElrsModule({configure = {name = config.moduleName, create = create, wakeup = wakeup, event = event, close = close}})
+        system.registerCrossfireModule({configure = {name = config.moduleName, create = create, wakeup = wakeup, event = event, close = close}})
 end
 
 return {init = init}
