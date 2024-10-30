@@ -1103,3 +1103,4 @@ CHOOSE_CHANNELS,"Choisir les voies",
 BALANCE_CURVE,"Courbe équilibrage",
 CONFIRM_TO_SHARE_RECEIVER,"Partager ce récepteur ?",
 CONFIRM_TO_UNBIND_RECEIVER,"Réinitialiser l'appairage du récepteur ?",
+RX_NOT_COMPATIBLE_MESSAGE,"This .frsk file doesn't compatible with this receiver. Are you sure you want to continue?"
