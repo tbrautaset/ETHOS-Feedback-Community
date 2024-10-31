@@ -112,7 +112,7 @@ TELEMETRY_25_MW,"Telemetria 25mW",
 HIGH_PWM_SPEED,"PWM Alta Velocità",
 FLIGHT_DATA_RECORDER,"Registro Dati Volo",
 RX_HAS_NO_FLIGHT_DATA_RECORD,"La ricevente non ha Dati Volo registrati.",
-SENSOR_CONFIG,"Configura Dispositivo",
+DEVICE_CONFIG,"Configura Dispositivo",
 CONFIRM_DELETE_TIMER,"Sei sicuro che vuoi cancellare questo timer?",
 TIMER,"Timer",
 MODE,"Modo",
@@ -674,6 +674,9 @@ AND,"AND",
 OR,"OR",
 XOR,"XOR",
 SENSORS,"Sensori",
+RECEIVERS,"Receivers"
+SERVOS,"Servos"
+FLIGHT_SAFETY,"Flight safety"
 VARIOMETER,"Variometro",
 ALARMS,"Allarmi",
 SENSOR,"Sensore",
