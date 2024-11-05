@@ -538,6 +538,7 @@ ALWAYS_ON,"Toujours",
 YES,"Oui",
 DIGITAL_RSSI,"RSSI numérique",
 GYRO,"Gyro",
+GYRO_SWITCHES,"Gyro switches"
 LANGUAGE,"Langue",
 SWITCHES,"Inters",
 TOP_TOOLBAR,"Barre infos sup.",
@@ -854,6 +855,10 @@ MISSING_THROTTLE,"Modèle sans moteur",
 SIX_POSITIONS_SWITCH,"Inter 6-POS",
 GYRO_X_AXIS,"Gyro Axe X",
 GYRO_Y_AXIS,"Gyro Axe Y",
+GYRO_LEFT,"Gyro Left"
+GYRO_RIGHT,"Gyro Right"
+GYRO_UP,"Gyro Up"
+GYRO_DOWN,"Gyro Down"
 AILERON_LETTER,"A",
 RUDDER_LETTER,"D",
 ELEVATOR_LETTER,"P",

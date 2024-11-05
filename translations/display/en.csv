@@ -333,6 +333,7 @@ ALWAYS_ON,"Always on",
 YES,"Yes",
 DIGITAL_RSSI,"Digital RSSI",
 GYRO,"Gyro",
+GYRO_SWITCHES,"Gyro switches"
 LANGUAGE,"Language",
 SWITCHES,"Switches",
 TOP_TOOLBAR,"Top toolbar",
@@ -768,6 +769,10 @@ MISSING_THROTTLE,"Your model doesn't have any throttles",
 SIX_POSITIONS_SWITCH,"6-POS switch",
 GYRO_X_AXIS,"Gyro X axis",
 GYRO_Y_AXIS,"Gyro Y axis",
+GYRO_LEFT,"Gyro Left"
+GYRO_RIGHT,"Gyro Right"
+GYRO_UP,"Gyro Up"
+GYRO_DOWN,"Gyro Down"
 AILERON_LETTER,"A",
 RUDDER_LETTER,"R",
 ELEVATOR_LETTER,"E",
