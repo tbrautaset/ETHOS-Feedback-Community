@@ -24,13 +24,13 @@ local function taskConfigure(task)
   form.addNumberField(line, slots[3], -1024, 1024, function() return taskMax end, function(value) taskMax = value end)
 end
 
-local function taskRead(source)
+local function taskRead(task)
   print("Task read")
   taskMin = storage.read("min")
   taskMax = storage.read("max")
 end
 
-local function taskWrite(source)
+local function taskWrite(task)
   print("Task write")
   storage.write("min", taskMin)
   storage.write("max", taskMax)
