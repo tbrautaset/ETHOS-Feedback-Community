@@ -96,7 +96,8 @@
     "DevicesListNotFound": "Seznam zařízení nebyl úspěšně načten.",
     "PlatformNotSupported": "Platforma není podporována!",
     "SelectAll": "Select all",
-    "UnselectAll": "Unselect all"
+    "UnselectAll": "Unselect all",
+    "Refresh": "Refresh"
   },
   "ChooseVideoVersion": {
     "ChooseYourVideoComponentVersion": "Vyberte verzi komponenty videa",
@@ -426,6 +427,26 @@
     "ScriptsDirectoryNotFound": "Scripts folder not found!",
     "FollowingScriptsFailToInstall": "The following scripts failed to install",
     "NoScriptsFound": "No scripts found in the .zip file!"
+  },
+  "LuaLib": {
+    "LuaLib": "Lua library",
+    "DownloadingScript": "Downloading scripts ...",
+    "ScriptNotFound": "Script not found!",
+    "DownloadScriptSuccessfully": "Download scirpt successfully!",
+    "SavingScript": "Saving scripts ...",
+    "StartingInstallScripts": "Starting installing scripts ...",
+    "StartingDownloadScripts": "Starting downloading scripts ...",
+    "AnalysingFile": "Analysing the file ...",
+    "FailToInstallScripts": "Failed to install scripts!",
+    "WritingScriptsInfo": "Writing scripts information ...",
+    "LoadingScriptsFromRadio": "Loading scripts from radio ...",
+    "RemoteLibrary": "Remote library",
+    "RadioScripts": "Radio scripts",
+    "Install": "Install",
+    "InstalledScript": "Installed script",
+    "InstallLatest": "Install latest",
+    "Reinstall": "Reinstall",
+    "ScriptInfo": "Script information"
   },
   "Updater": {
     "NewVersionAvailable": "Nová verze Suitu {{ version }} je k dispozici!",

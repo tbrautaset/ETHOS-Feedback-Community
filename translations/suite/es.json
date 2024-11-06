@@ -93,7 +93,8 @@
     "PlatformNotSupported": "¡Sistema no compatible!",
     "OpenDirectory": "Abrir carpeta",
     "SelectAll": "Seleccionar todo",
-    "UnselectAll": "Deseleccionar todo"
+    "UnselectAll": "Deseleccionar todo",
+    "Refresh": "Refresh"
   },
   "ChooseVideoVersion": {
     "ChooseYourVideoComponentVersion": "Elija su versión de video componente",
@@ -420,6 +421,26 @@
     "ScriptsDirectoryNotFound": "¡No se ha encontrado la carpeta con los Scripts!",
     "FollowingScriptsFailToInstall": "Ha fallado la instalación de los siguientes scripts",
     "NoScriptsFound": "¡No se han encontrado scripts en el archivo .zip!"
+  },
+  "LuaLib": {
+    "LuaLib": "Lua library",
+    "DownloadingScript": "Downloading scripts ...",
+    "ScriptNotFound": "Script not found!",
+    "DownloadScriptSuccessfully": "Download scirpt successfully!",
+    "SavingScript": "Saving scripts ...",
+    "StartingInstallScripts": "Starting installing scripts ...",
+    "StartingDownloadScripts": "Starting downloading scripts ...",
+    "AnalysingFile": "Analysing the file ...",
+    "FailToInstallScripts": "Failed to install scripts!",
+    "WritingScriptsInfo": "Writing scripts information ...",
+    "LoadingScriptsFromRadio": "Loading scripts from radio ...",
+    "RemoteLibrary": "Remote library",
+    "RadioScripts": "Radio scripts",
+    "Install": "Install",
+    "InstalledScript": "Installed script",
+    "InstallLatest": "Install latest",
+    "Reinstall": "Reinstall",
+    "ScriptInfo": "Script information"
   },
   "Updater": {
     "NewVersionAvailable": "Hay disponible una nueva versión de la Suite {{ version }}",

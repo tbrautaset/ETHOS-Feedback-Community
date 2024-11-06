@@ -97,7 +97,8 @@
     "PlatformNotSupported": "当前平台不被支持!",
     "OpenDirectory": "打开文件夹",
     "SelectAll": "选择所有",
-    "UnselectAll": "取消选择所有"
+    "UnselectAll": "取消选择所有",
+    "Refresh": "刷新"
   },
   "ChooseVideoVersion": {
     "ChooseYourVideoComponentVersion": "选择你的视频组件版本",
@@ -427,6 +428,26 @@
     "ScriptsDirectoryNotFound": "没有找到脚本目录!",
     "FollowingScriptsFailToInstall": "以下脚本安装失败",
     "NoScriptsFound": "在压缩包中没有找到任何脚本!"
+  },
+  "LuaLib": {
+    "LuaLib": "Lua 管理中心",
+    "DownloadingScript": "正在下载脚本 ...",
+    "ScriptNotFound": "没有找到任何脚本!",
+    "DownloadScriptSuccessfully": "已成功下载脚本!",
+    "SavingScript": "正在保存脚本 ...",
+    "StartingInstallScripts": "开始安装脚本 ...",
+    "StartingDownloadScripts": "开始下载脚本 ...",
+    "AnalysingFile": "正在解析文件 ...",
+    "FailToInstallScripts": "安装脚本失败!",
+    "WritingScriptsInfo": "正在记录脚本信息 ...",
+    "LoadingScriptsFromRadio": "正在从遥控器读取脚本 ...",
+    "RemoteLibrary": "服务器脚本库",
+    "RadioScripts": "遥控器脚本",
+    "Install": "安装",
+    "InstalledScript": "已安装的脚本",
+    "InstallLatest": "安装最新版",
+    "Reinstall": "重新安装",
+    "ScriptInfo": "脚本信息"
   },
   "Updater": {
     "NewVersionAvailable": "Suite {{ version }} 已发布!",

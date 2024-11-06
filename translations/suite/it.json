@@ -97,7 +97,8 @@
     "PlatformNotSupported": "Piattaforma non supportata!",
     "OpenDirectory": "Apri Cartella",
     "SelectAll": "Seleziona tutto",
-    "UnselectAll": "Deseleziona tutto"
+    "UnselectAll": "Deseleziona tutto",
+    "Refresh": "Refresh"
   },
   "ChooseVideoVersion": {
     "ChooseYourVideoComponentVersion": "Scegliere la versione del video component",
@@ -426,6 +427,26 @@
     "ScriptsDirectoryNotFound": "Cartella Scripts non trovata!",
     "FollowingScriptsFailToInstall": "Il seguente scripts non è stato installato",
     "NoScriptsFound": "Nessuno scripts trovato nel file .zip!"
+  },
+  "LuaLib": {
+    "LuaLib": "Lua library",
+    "DownloadingScript": "Downloading scripts ...",
+    "ScriptNotFound": "Script not found!",
+    "DownloadScriptSuccessfully": "Download scirpt successfully!",
+    "SavingScript": "Saving scripts ...",
+    "StartingInstallScripts": "Starting installing scripts ...",
+    "StartingDownloadScripts": "Starting downloading scripts ...",
+    "AnalysingFile": "Analysing the file ...",
+    "FailToInstallScripts": "Failed to install scripts!",
+    "WritingScriptsInfo": "Writing scripts information ...",
+    "LoadingScriptsFromRadio": "Loading scripts from radio ...",
+    "RemoteLibrary": "Remote library",
+    "RadioScripts": "Radio scripts",
+    "Install": "Install",
+    "InstalledScript": "Installed script",
+    "InstallLatest": "Install latest",
+    "Reinstall": "Reinstall",
+    "ScriptInfo": "Script information"
   },
   "Updater": {
     "NewVersionAvailable": "Nuova versione Suite {{ version }} disponibile!",
