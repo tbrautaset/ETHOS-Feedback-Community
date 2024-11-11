@@ -1111,3 +1111,4 @@ CHOOSE_CHANNELS,"Choisir les voies",
 BALANCE_CURVE,"Courbe équilibrage",
 CONFIRM_TO_SHARE_RECEIVER,"Partager ce récepteur ?",
 CONFIRM_TO_UNBIND_RECEIVER,"Réinitialiser l'appairage du récepteur ?",
+RX_VFR,"Rx VFR"
