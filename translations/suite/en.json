@@ -197,6 +197,14 @@
     "Restoring": "Restoring factory settings ...",
     "RestoreSucceed": "Factory settings restored successfully! Please reboot your radio manually."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Compared with the latest stable version)",
     "BootloaderMode": "Bootloader mode",

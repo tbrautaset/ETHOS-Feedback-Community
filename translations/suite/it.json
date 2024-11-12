@@ -196,6 +196,14 @@
     "Restoring": "Ripristina ai valori di fabbrica...",
     "RestoreSucceed": "Ripristino valori di fabbrica eseguito! Si prega di riavviare la radio manualmente."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Rispetto all'ultima versione stabile)",
     "BootloaderMode": "Modo Bootloader",

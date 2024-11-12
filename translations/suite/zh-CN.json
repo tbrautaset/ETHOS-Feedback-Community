@@ -196,6 +196,14 @@
     "Restoring": "正在恢复出厂设置 ...",
     "RestoreSucceed": "已成功恢复出厂设置, 请手动重启遥控器."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(与最新的稳定版比较)",
     "BootloaderMode": "Bootloader 模式",

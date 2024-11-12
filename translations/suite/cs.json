@@ -195,6 +195,14 @@
     "Restoring": "Obnovuji tovární nastavení ...",
     "RestoreSucceed": "Obnova do továrního nastavení uspěšná! Prosím restartujte rádio ručně."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Ve srovnání s nejnovější stabilní verzí)",
     "BootloaderMode": "Režim bootloaderu",

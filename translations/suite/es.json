@@ -190,6 +190,14 @@
     "Restoring": "Restaurando los ajustes de fábrica ...",
     "RestoreSucceed": "¡Ajustes de fábrica restaurados con éxito! Por favor, reinicie su radio manualmente."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Comparando con la última versión estable)",
     "BootloaderMode": "Modo bootloader",

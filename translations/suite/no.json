@@ -196,6 +196,14 @@
     "Restoring": "Gjenoppretter fabrikkinnstillinger ...",
     "RestoreSucceed": "Vellykket gjenoppretting av fabrikkinnstillinger! Ta en manuell omstart av radioen!"
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Sammenlignet med den siste stabile versjonen)",
     "BootloaderMode": "Bootloader Modus",

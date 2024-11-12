@@ -196,6 +196,14 @@
     "Restoring": "Réinitialisation en cours ...",
     "RestoreSucceed": "Réinitialisation terminée ! Redémarrer la radio manuellement."
   },
+  "RadioInfo": {
+    "RadioInfo": "Radio information",
+    "ManageEthos": "Manage ETHOS",
+    "ManageModule": "Manage internal module",
+    "ManageLua": "Manage Lua script",
+    "ManageDevice": "Manage external device",
+    "ManageModel": "Manage model"
+  },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Comparé avec la dernière version stable)",
     "BootloaderMode": "Mode bootloader",
