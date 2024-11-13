@@ -75,7 +75,9 @@
     "Flash": "Flash",
     "Download": "Last ned",
     "MissingDiskError": "Mangler 'disk'!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "Venter på disken...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "Operasjonen ble avsluttet med ukjent status",
     "ReceiveFailStatus": "Operasjonen feilet. Radioen har sendt tilbake en feil!",
     "RadioNoResponse": "Operasjonen er avsluttet. Ingen respons fra radioen.",
@@ -203,6 +205,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Sammenlignet med den siste stabile versjonen)",

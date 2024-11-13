@@ -75,7 +75,9 @@
     "Flash": "Flash",
     "Download": "Download",
     "MissingDiskError": "Fehlendes Laufwerk!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "Warten auf Laufwerk...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "Vorgang mit unbekanntem Status abgebrochen",
     "ReceiveFailStatus": "Vorgang fehlgeschlagen. Der Sender hat einen Fehler gemeldet!",
     "RadioNoResponse": "Der Vorgang wurde abgebrochen. Der Sender antwortet nicht.",
@@ -203,6 +205,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Compared with the latest stable version)",

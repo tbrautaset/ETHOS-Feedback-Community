@@ -74,7 +74,9 @@
     "Flash": "Flash",
     "Download": "Descargar",
     "MissingDiskError": "¡El disco no se detecta!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "Esperando al disco ...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "Operación cancelada por razones desconocidas",
     "ReceiveFailStatus": "Ha fallado la operación. La radio ha reportado un error",
     "RadioNoResponse": "Operation cancelada. La radio no responde.",
@@ -197,6 +199,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Comparando con la última versión estable)",

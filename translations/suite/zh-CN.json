@@ -75,7 +75,9 @@
     "Flash": "烧写",
     "Download": "下载",
     "MissingDiskError": "没有找到磁盘!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "正在等待磁盘...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "该操作因为未知的错误而被停止",
     "ReceiveFailStatus": "操作失败, 遥控器返回了一个错误!",
     "RadioNoResponse": "操作被终止, 遥控器没有响应!",
@@ -203,6 +205,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(与最新的稳定版比较)",

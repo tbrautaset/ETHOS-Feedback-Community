@@ -75,7 +75,9 @@
     "Flash": "Flash",
     "Download": "Download",
     "MissingDiskError": "Chybí disk!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "Waiting for disk...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "Operation aborted with unknown status",
     "ReceiveFailStatus": "Operation failed. Radio has returned an error!",
     "RadioNoResponse": "Operation aborted. Radio has no response.",
@@ -203,6 +205,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Compared with the latest stable version)",

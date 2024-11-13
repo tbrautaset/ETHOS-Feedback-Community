@@ -75,7 +75,9 @@
     "Flash": "Flash",
     "Download": "Stáhnout",
     "MissingDiskError": "Chybí disk!",
+    "CannotReadModuleInfo": "Unable to get internal module information",
     "WaitingDisk": "Čekám na disk...",
+    "WaitingModuleInfo": "Waiting for module information ...",
     "AbortedWithUnknownStatus": "Operace přerušena s neznámým stavem",
     "ReceiveFailStatus": "Operace se nezdařila. Rádio vrátilo chybu!",
     "RadioNoResponse": "Operace přerušena. Rádio neodpovídá.",
@@ -202,6 +204,11 @@
     "ManageLua": "Manage Lua script",
     "ManageDevice": "Manage external device",
     "ManageModel": "Manage model"
+  },
+  "VersionMap": {
+    "MissingRequiredComponentVersion": "Missing required component version",
+    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
+    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Ve srovnání s nejnovější stabilní verzí)",
