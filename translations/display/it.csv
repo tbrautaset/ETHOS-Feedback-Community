@@ -1111,4 +1111,5 @@ CHOOSE_CHANNELS,"Scegli canali",
 BALANCE_CURVE,"Curva Bilanciamento",
 CONFIRM_TO_SHARE_RECEIVER,"Sei Sicuro di voler condivdere questa ricevente?",
 CONFIRM_TO_UNBIND_RECEIVER,"Sei Sicuro di voler scollegare questa ricevente?",
+CONFIRM_RX_NOT_COMPATIBLE,"This .frsk file is not compatible with this receiver.\nAre you sure you want to continue?"
 RX_VFR,"Rx VFR"
