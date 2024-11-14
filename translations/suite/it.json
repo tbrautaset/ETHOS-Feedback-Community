@@ -75,9 +75,9 @@
     "Flash": "Flash",
     "Download": "Download",
     "MissingDiskError": "Disco Mancante!",
-    "CannotReadModuleInfo": "Unable to get internal module information",
+    "CannotReadModuleInfo": "Impossibile ottenere informazioni modulo",
     "WaitingDisk": "In attesa del disco...",
-    "WaitingModuleInfo": "Waiting for module information ...",
+    "WaitingModuleInfo": "In attesa informazioni modulo ...",
     "AbortedWithUnknownStatus": "Operazione annullata con stato sconosciuto",
     "ReceiveFailStatus": "Operazione fallita. La Radio ha riportato un errore!",
     "RadioNoResponse": "Operazione annullata. La Radio non risponde.",
@@ -207,9 +207,9 @@
     "ManageModel": "Gestisci modello"
   },
   "VersionMap": {
-    "MissingRequiredComponentVersion": "Missing required component version",
-    "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
-    "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
+    "MissingRequiredComponentVersion": "Versione componente richiesta mancante",
+    "TargetFirmwareNotCompatible": "La {{ targetComponent }} versione firmware {{ targetVersion }} necessita di essere usata con il {{ requireComponent }} Versione firmware {{ requireVersion }}.",
+    "RequireUpdate": "Si prega di aggiornare prima {{ requireComponent }} firmware alla versione {{ requireVersion }} ."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Rispetto all'ultima versione stabile)",
