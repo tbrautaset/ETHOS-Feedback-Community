@@ -95,8 +95,8 @@
     "OnlineSettingsNotFound": "Online konfigurace nebyla úspěšně načtena.",
     "DevicesListNotFound": "Seznam zařízení nebyl úspěšně načten.",
     "PlatformNotSupported": "Platforma není podporována!",
-    "SelectAll": "Select all",
-    "UnselectAll": "Unselect all"
+    "SelectAll": "Vybrat vše",
+    "UnselectAll": "Zrušit výběr"
   },
   "ChooseVideoVersion": {
     "ChooseYourVideoComponentVersion": "Vyberte verzi komponenty videa",
@@ -122,7 +122,7 @@
     "DFUNotDetected": "Zařízení DFU nenalezeno"
   },
   "DownloadCenter": {
-    "DownloadCenter": "Download center",
+    "DownloadCenter": "Centrum stahování",
     "FlashLocalFRSK": "Flash místní .frsk",
     "SelectFRSK": "Vyberte .frsk",
     "FileInfo": "Info o souboru:",
@@ -138,16 +138,16 @@
     "FRSKFlashFailed": "Chyba při aktualizaci .frsk!",
     "FRSKNotMatchComponent": "Tento soubor .frsk není vhodný pro váš hardware. Operace byla přerušena!",
     "FlashFRSKWithoutHardwareInfo": "Nemůžeme získat informace o vašem hardwaru. Nemůžeme tedy určit, zda je tento soubor .frsk použitelný pro váš hardware nebo ne. Chcete pokračovat v nahrání?",
-    "DownloadMoreFirmware": "Download more firmware",
-    "SensorFirmware": "Sensor firmware",
-    "ReceiverFirmware": "Receiver firmware",
-    "LuaScripts": "Lua scripts",
-    "DownloadFirmware": "Download firmware",
-    "DownloadScripts": "Download scripts",
-    "DownloadAssetSuccessfully": "Asset has been downloaded successfully!",
-    "NoFRSKFileFound": "No .frsk file found in the downloaded zip",
-    "MultipleFRSKDetected": "Multiple available .frsk file detected. Please select the .frsk file you want to flash",
-    "ProductList": "Product list",
+    "DownloadMoreFirmware": "Stáhnout dalsí firmware",
+    "SensorFirmware": "Firmware senzorů",
+    "ReceiverFirmware": "Firmware přijímače",
+    "LuaScripts": "Lua skripty",
+    "DownloadFirmware": "Stáhnout firmware",
+    "DownloadScripts": "Stáhnout skripty",
+    "DownloadAssetSuccessfully": "Soubory byly v pořádku staženy!",
+    "NoFRSKFileFound": "Ve staženém zipu nebyl nalezen žádný soubor .frsk",
+    "MultipleFRSKDetected": "Bylo zjištěno více dostupných souborů .frsk. Vyberte soubor .frsk, který chcete flashovat",
+    "ProductList": "Seznam produktů",
     "ProductAssets": "Product assets"
   },
   "VersionTag": {
@@ -156,7 +156,7 @@
     "OutOfDate": "Zastaralý",
     "GreaterThanLatestRelease": "Vyšší než poslední verze",
     "UpToDate": "Aktuální",
-    "Nightly": "Caution! Nightly / Prerelease build"
+    "Nightly": "Pozor! Noční / předběžná verze"
   },
   "ImageManager": {
     "ImageManager": "Správce obrázků",
@@ -169,9 +169,9 @@
     "RadioImages": "Obrázky rádia",
     "OutputSize": "Výstupní velikost",
     "ModelImage": "Model image",
-    "GPSImage": "GPS image",
-    "WidgetImage": "User image",
-    "RightDirectory": "Right folder"
+    "GPSImage": "Obrázek GPS",
+    "WidgetImage": "Uživatelský obrázek",
+    "RightDirectory": "Správný adresář"
   },
   "AudioManager": {
     "AudioManager": "Správce zvuků",
@@ -214,7 +214,7 @@
     "WriteAllComponents": "Aktualizovat všechny komponenty",
     "WriteOutdated": "Aktualizovat zastaralé komponenty",
     "WriteFirmware": "Aktualizovat firmware",
-    "WriteFirmwareAndSystemFiles": "Write firmware and system files",
+    "WriteFirmwareAndSystemFiles": "Aktualizovat firmware a systémové soubory",
     "WriteAudio": "Aktualizovat audio soubory",
     "WriteSystemBitmaps": "Aktualizovat systémové bitmapy",
     "DownloadingFirmware": "Stahuji firmware...",
@@ -223,8 +223,8 @@
     "WritingFirmware": "Zapisuji firmware do rádia...",
     "FirmwareFlashSuccess": "Úspěšný zápis firmware!",
     "FirmwareFlashError": "Zápis firmware selhal!",
-    "DownloadingSystemFiles": "Downloading system files ...",
-    "CopyingSystemFilesToRadio": "Copying system files to radio ...",
+    "DownloadingSystemFiles": "Stahuji systémové soubory ...",
+    "CopyingSystemFilesToRadio": "Kopíruji systemové soubory do rádia ...",
     "DownloadingAudioPack": "Stahuji {{ lang }} audio balíček...",
     "CopyingAudioPackToRadio": "Kopíruji {{ lang }} audio balíček do rádia...",
     "UpdateSuccess": "Aktualizace úspěšná",
@@ -255,10 +255,10 @@
     "GoToDownloadCenter": "Go to download center",
     "LatestBootloaderRequired": "Potřeba posledního Bootloaderu!",
     "ConfirmUpdateBootloaderFirstly": "Firmware vybrané verze vyžaduje aktualizovaný bootloader, nebo vaše rádio nebude správně fungovat. Potvrďte nejprve aktualizaci bootloaderu?",
-    "ConfirmBackup": "Confirm backup",
-    "BackupOrContinueUpdate": "It's recommended that you backup the contents of your radio before updating. Would you like to go to the backup page or continue updating?",
-    "GoToBackup": "Go to backup page",
-    "ContinueUpdaing": "Continue updating"
+    "ConfirmBackup": "Zálohovat?",
+    "BackupOrContinueUpdate": "Před aktualizací se doporučuje zálohovat obsah rádia. Chcete přejít na zálohování nebo pokračovat v aktualizaci?",
+    "GoToBackup": "Na zálohování",
+    "ContinueUpdaing": "Aktualizovat"
   },
   "RFModule": {
     "RFModule": "RF modul",
@@ -353,8 +353,8 @@
     "EthosGithubDescription": "Odkaz na komunitu Ethosu na Githubu, kda najdete i nove verze a nebo můžete nahlásit problém.",
     "OpenWebpage": "Otevřít v prohlížeči",
     "OpenFAQ": "Otevřít FAQ",
-    "OpenManual": "Open manual",
-    "LoadingManuals": "Loading manuals ..."
+    "OpenManual": "Otevřít manuál",
+    "LoadingManuals": "Načítám manualy ..."
   },
   "BootloaderGuide": {
     "BootloaderGuideTitle": "Váš firmware možná nepodporuje automatické přepínání. Přepněte na bootloader ručně podle následujících kroků",
@@ -414,18 +414,18 @@
     "VersionNotSupportedText": "Aktuální verze firmwaru vašeho rádia tuto funkci nepodporuje. Aktualizujte prosím na verzi 1.5.0 nebo vyšší.",
     "NoFrskySerialPortDetected": "Nebyl zjištěn žádný dostupný sériový port rádia Frsky!",
     "MultipleFrskyPortDetected": "Bylo zjištěno více dostupných sériových portů rádia Frsky. Vyberte sériový port, který chcete otevřít pro ladění.",
-    "LuaInstall": "Install Lua scripts",
-    "LuaInstallDescription": "Help you install lua scripts from a .zip file to your radio",
-    "OpenZip": "Open .zip",
-    "AnalysingFiles": "Analysing files ...",
-    "NoFileSelected": "No file selected!",
-    "ScriptsInstalled": "Scripts installed",
-    "ScriptsFound": "Found the following scripts",
-    "SelectScriptsDescription": "Please select the script you want to install (the folder name where the script is located will be the script's name)",
-    "InstallingScripts": "Installing scripts ...",
-    "ScriptsDirectoryNotFound": "Scripts folder not found!",
-    "FollowingScriptsFailToInstall": "The following scripts failed to install",
-    "NoScriptsFound": "No scripts found in the .zip file!"
+    "LuaInstall": "Instalovat Lua scripty",
+    "LuaInstallDescription": "Pomůže Vám instalovat Lua skripty ze souboru .zip do Vašeho rádia",
+    "OpenZip": "Otevřit .zip",
+    "AnalysingFiles": "Analyzuji soubory ...",
+    "NoFileSelected": "Nebyl vybrán žádný soubor!",
+    "ScriptsInstalled": "Skripty nainstalovány",
+    "ScriptsFound": "Nalezeny následující skripty",
+    "SelectScriptsDescription": "Vyberte prosím skript, který chcete nainstalovat (název složky, kde je skript umístěn, bude názvem skriptu)",
+    "InstallingScripts": "Instaluji skripty ...",
+    "ScriptsDirectoryNotFound": "Adresář skriptů nebyl nalezen!",
+    "FollowingScriptsFailToInstall": "Následující skripty se nepodařilo nainstalovat",
+    "NoScriptsFound": "V souboru .zip nebyly nalezeny žádné skripty!"
   },
   "Updater": {
     "NewVersionAvailable": "Nová verze Suitu {{ version }} je k dispozici!",
