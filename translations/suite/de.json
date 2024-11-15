@@ -207,6 +207,7 @@
     "ManageModel": "Manage model"
   },
   "VersionMap": {
+    "RecommendUpdate": "We strongly recommend you update to {{ recommend }} for a better experience",
     "MissingRequiredComponentVersion": "Missing required component version",
     "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
     "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
