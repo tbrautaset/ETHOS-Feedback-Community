@@ -207,10 +207,10 @@
     "ManageModel": "Gestisci modello"
   },
   "VersionMap": {
-    "RecommendUpdate": "We strongly recommend you update to {{ recommend }} for a better experience",
+    "RecommendUpdate": "E' altamente consigliato di aggiornare a {{ recommend }} per una migliore esperienza",
     "MissingRequiredComponentVersion": "Versione componente richiesta mancante",
     "TargetFirmwareNotCompatible": "La {{ targetComponent }} versione firmware {{ targetVersion }} necessita di essere usata con il {{ requireComponent }} Versione firmware {{ requireVersion }}.",
-    "RequireUpdate": "Si prega di aggiornare prima {{ requireComponent }} firmware alla versione {{ requireVersion }} ."
+    "RequireUpdate": "Si prega di aggiornare il firmware {{ requireComponent }} alla versione {{ requireVersion }} ."
   },
   "RadioTool": {
     "ComparedWithTheLatestStabVersion": "(Rispetto all'ultima versione stabile)",
