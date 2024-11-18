@@ -261,7 +261,7 @@ local function wakeup(widget)
 
   local time = os.clock()
   while true do
-    command, data = widget:popFrame()
+    command, data = widget.popFrame()
     if command == nil then
       break
     elseif command == 0x29 then
