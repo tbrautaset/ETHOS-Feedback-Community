@@ -24,6 +24,10 @@ local function pauseTelemetry(state)
   end
 end
 
+local sensor
+local popFrame
+local pushFrame
+
 local function create()
   devices = {}
   deviceId = nil
@@ -32,23 +36,19 @@ local function create()
   currentExpansionPanel = nil
   pauseTelemetry(true)
   if crsf.getSensor then
-    local sensor = crsf.getSensor()
-    return {
-      sensor = sensor,
-      popFrame = function() return sensor:popFrame() end,
-      pushFrame = function(x, y) return sensor:pushFrame(x, y) end
-    }
+    sensor = crsf.getSensor()
+    popFrame = function() return sensor:popFrame() end,
+    pushFrame = function(x, y) return sensor:pushFrame(x, y) end
   else
-    return {
-      sensor = nil,
-      popFrame = function() return crsf.popFrame() end,
-      pushFrame = function(x, y) return crsf.pushFrame(x, y) end
-    }
+    popFrame = function() return crsf.popFrame() end,
+    pushFrame = function(x, y) return crsf.pushFrame(x, y) end
   end
+  return {}
 end
 
 local function close()
   pauseTelemetry(false)
+  sensor = nil
 end
 
 local function createDevice(id, name, fieldsCount)
@@ -180,7 +180,7 @@ local function parseParameterInfoMessage(data)
             end, 
             function(value)
               field.value = value
-              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, value})
+              pushFrame(0x2D, {deviceId, handsetId, field.id, value})
             end)
         end
       elseif field.type == 13 then
@@ -198,7 +198,7 @@ local function parseParameterInfoMessage(data)
                 {
                   label = "OK",
                   action = function()
-                    widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
+                    pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
                     fieldTimeout = os.time() + field.timeout / 100 -- we are expecting an immediate response
                     field.status = 4
                   end
@@ -223,7 +223,7 @@ local function parseParameterInfoMessage(data)
           field.widget = form.addTextButton(line, nil, field.name, function()
             if field.status < 4 then
               field.status = 1
-              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
+              pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
               fieldPopup = field
               field.dialog = form.openDialog(field.name, field.info, {
                 {
@@ -261,7 +261,7 @@ local function wakeup(widget)
 
   local time = os.clock()
   while true do
-    command, data = widget.popFrame()
+    command, data = popFrame()
     if command == nil then
       break
     elseif command == 0x29 then
@@ -280,15 +280,15 @@ local function wakeup(widget)
 
   if fieldPopup then        
     if time > fieldTime and fieldPopup.status ~= 3 then
-      widget.pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
+      pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
       fieldTime = time + fieldPopup.timeout / 100
     end
   elseif time > devicesRefreshTime and deviceId == nil then
     devicesRefreshTime = time + 1 -- 1s
-    widget.pushFrame(0x28, {0x00, 0xEA})
+    pushFrame(0x28, {0x00, 0xEA})
   elseif time > fieldTime and deviceId ~= nil then
     if #loadQ > 0 then
-      widget.pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
+      pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
       fieldTime = time + 0.5
     end
   end
