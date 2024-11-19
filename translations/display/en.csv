@@ -655,6 +655,7 @@ NO_SD_CARD_WARNING,"No SD Card warning",
 ADD_CURVE_ERROR,"Add curve failed!",
 STEP,"Step",
 AILERON,"Aileron",
+ELEVON,"Elevon"
 SPACE_WITH_CHANNEL," channel",
 QUESTION_SWAP_SSS_AND_SSS_CHANNELS_SETTINGS,"Do you want to swap %s and %s channels settings?",
 INPUT,"Input",

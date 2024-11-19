@@ -622,6 +622,7 @@ NO_SD_CARD_WARNING,"Avviso No SD Card",
 ADD_CURVE_ERROR,"Aggiungi curva fallito!",
 STEP,"Step",
 AILERON,"Alettone",
+ELEVON,"Elevon"
 SPACE_WITH_CHANNEL," canale",
 QUESTION_SWAP_SSS_AND_SSS_CHANNELS_SETTINGS,"Vuoi scambiare %s e %s Impostazione canali?",
 INPUT,"Ingressi",
