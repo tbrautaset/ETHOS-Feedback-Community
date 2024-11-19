@@ -37,10 +37,10 @@ local function create()
   pauseTelemetry(true)
   if crsf.getSensor then
     sensor = crsf.getSensor()
-    popFrame = function() return sensor:popFrame() end,
+    popFrame = function() return sensor:popFrame() end
     pushFrame = function(x, y) return sensor:pushFrame(x, y) end
   else
-    popFrame = function() return crsf.popFrame() end,
+    popFrame = function() return crsf.popFrame() end
     pushFrame = function(x, y) return crsf.pushFrame(x, y) end
   end
   return {}
