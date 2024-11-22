@@ -298,6 +298,7 @@ DISCONNECT,"Disconnect",
 WAITING_FOR_DEVICE,"Waiting for device",
 DIST_ADDRESS,"Distant address",
 CONNECTING,"Connecting",
+BLUETOOTH_AUDIO,"Bluetooth Audio"
 RESET_MODULE,"Reset module",
 HIGH_SPEED,"High speed",
 NORMAL_SPEED,"Normal speed",

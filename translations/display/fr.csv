@@ -489,6 +489,7 @@ DISCONNECT,"Déconnecter",
 WAITING_FOR_DEVICE,"Connexion en cours ...",
 DIST_ADDRESS,"Adresse distante",
 CONNECTING,"Connexion en cours",
+BLUETOOTH_AUDIO,"Bluetooth Audio"
 RESET_MODULE,"Réinitialiser module",
 HIGH_SPEED,"Vitesse rapide",
 NORMAL_SPEED,"Vitesse normale",
