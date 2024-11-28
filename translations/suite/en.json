@@ -484,5 +484,19 @@
         "DeleteInstaller": "Delete installer",
         "ConfirmDeleteInstaller": "Are you sure you want to delete the update installer?",
         "NewVersionLabel": "New version available"
+    },
+    "Product": {
+        "Servos": "Servos",
+        "Transmitters": "Transmitters",
+        "Flight-Safe System": "Flight-Safe System",
+        "Accessories": "Accessories",
+        "ESC": "ESC",
+        "Modules": "Modules",
+        "Internal module": "Internal module",
+        "External module": "External module",
+        "Receivers": "Receivers",
+        "Sensors": "Sensors",
+        "VTX": "VTX",
+        "Radio": "Radio"
     }
 }

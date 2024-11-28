@@ -482,5 +482,19 @@
         "InstallUpdate": "安装升级",
         "DeleteInstaller": "删除升级工具",
         "ConfirmDeleteInstaller": "你确定要删除升级工具吗?"
+    },
+    "Product": {
+        "Servos": "舵机",
+        "Transmitters": "发射机",
+        "Flight-Safe System": "飞行安全系统",
+        "Accessories": "附件",
+        "ESC": "ESC",
+        "Modules": "模块",
+        "Internal module": "内置模块",
+        "External module": "外置模块",
+        "Receivers": "接收机",
+        "Sensors": "传感器",
+        "VTX": "VTX",
+        "Radio": "遥控器"
     }
 }

@@ -482,5 +482,19 @@
         "DeleteInstaller": "Cancellare Aggiornamento",
         "ConfirmDeleteInstaller": "Sei sicuro di voler cancellare l'aggiornamento?",
         "NewVersionLabel": "Nuova versione disponibile"
+    },
+    "Product": {
+        "Servos": "Servos",
+        "Transmitters": "Transmitters",
+        "Flight-Safe System": "Flight-Safe System",
+        "Accessories": "Accessories",
+        "ESC": "ESC",
+        "Modules": "Modules",
+        "Internal module": "Internal module",
+        "External module": "External module",
+        "Receivers": "Receivers",
+        "Sensors": "Sensors",
+        "VTX": "VTX",
+        "Radio": "Radio"
     }
 }
