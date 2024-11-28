@@ -101,7 +101,8 @@
         "SelectAll": "Tout sélectionner",
         "UnselectAll": "Déselectionner tout",
         "Refresh": "Refresh",
-        "SystemFiles": "System files"
+        "SystemFiles": "System files",
+        "Dismiss": "Dismiss"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Choisir votre version de composant vidéo",

@@ -75,13 +75,13 @@
         "Flash": "烧写",
         "Download": "下载",
         "MissingDiskError": "没有找到磁盘!",
-        "CannotReadModuleInfo": "Unable to get internal module information",
+        "CannotReadModuleInfo": "无法获得内置模块信息",
         "WaitingDisk": "正在等待磁盘...",
-        "WaitingModuleInfo": "Waiting for module information ...",
+        "WaitingModuleInfo": "正在等待内置模块信息 ...",
         "AbortedWithUnknownStatus": "该操作因为未知的错误而被停止",
         "ReceiveFailStatus": "操作失败, 遥控器返回了一个错误!",
         "RadioNoResponse": "操作被终止, 遥控器没有响应!",
-        "DisplayLanguage": "Display language",
+        "DisplayLanguage": "显示语言",
         "Options": "选项",
         "Recommended": "推荐",
         "ListToBeTranscoded": "待转码列表",
@@ -101,7 +101,8 @@
         "SelectAll": "选择所有",
         "UnselectAll": "取消选择所有",
         "Refresh": "刷新",
-        "SystemFiles": "System files"
+        "SystemFiles": "系统文件",
+        "Dismiss": "忽略"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "选择你的视频组件版本",
@@ -200,18 +201,18 @@
         "RestoreSucceed": "已成功恢复出厂设置, 请手动重启遥控器."
     },
     "RadioInfo": {
-        "RadioInfo": "Radio information",
-        "ManageEthos": "Manage ETHOS",
-        "ManageModule": "Manage internal module",
-        "ManageLua": "Manage Lua script",
-        "ManageDevice": "Manage external device",
-        "ManageModel": "Manage model"
+        "RadioInfo": "遥控器信息",
+        "ManageEthos": "管理 ETHOS",
+        "ManageModule": "管理内置模块",
+        "ManageLua": "管理 Lua 脚本",
+        "ManageDevice": "管理其他设备",
+        "ManageModel": "管理模型"
     },
     "VersionMap": {
-        "RecommendUpdate": "We strongly recommend you update to {{ recommend }} for a better experience",
-        "MissingRequiredComponentVersion": "Missing required component version",
-        "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
-        "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
+        "RecommendUpdate": "我们强烈建议你升级到 {{ recommend }} 以获取更好的使用体验",
+        "MissingRequiredComponentVersion": "缺少必要的组件版本",
+        "TargetFirmwareNotCompatible": "你即将升级的 {{ targetComponent }} {{ targetVersion }} 需要与 {{ requireComponent }} {{ requireVersion }} 配合使用.",
+        "RequireUpdate": "请先将 {{ requireComponent }} 升级到版本 {{ requireVersion }}."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(与最新的稳定版比较)",

@@ -100,7 +100,8 @@
         "SelectAll": "Vybrat vše",
         "UnselectAll": "Zrušit výběr",
         "Refresh": "Refresh",
-        "SystemFiles": "System files"
+        "SystemFiles": "System files",
+        "Dismiss": "Dismiss"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Vyberte verzi komponenty videa",
