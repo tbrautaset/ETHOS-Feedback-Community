@@ -299,8 +299,8 @@ WAITING_FOR_DEVICE,"Attesa connessione",
 DIST_ADDRESS,"Indirizzo Dist",
 CONNECTING,"Connessione",
 BLUETOOTH_AUDIO,"Audio Bluetooth"
-NOT_INSTALLED,"Not installed (default)"
-INSTALLED_AS_AN_OPTION,"Installed as an option"
+NOT_INSTALLED,"Non Installato (default)"
+INSTALLED_AS_AN_OPTION,"Installato come opzione"
 RESET_MODULE,"Reset Modulo",
 HIGH_SPEED,"Velocità Alta",
 NORMAL_SPEED,"Velocità Normale",
