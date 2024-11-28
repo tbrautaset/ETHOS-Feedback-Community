@@ -490,6 +490,8 @@ WAITING_FOR_DEVICE,"Connexion en cours ...",
 DIST_ADDRESS,"Adresse distante",
 CONNECTING,"Connexion en cours",
 BLUETOOTH_AUDIO,"Bluetooth Audio"
+NOT_INSTALLED,"Not installed (default)"
+INSTALLED_AS_AN_OPTION,"Installed as an option"
 RESET_MODULE,"Réinitialiser module",
 HIGH_SPEED,"Vitesse rapide",
 NORMAL_SPEED,"Vitesse normale",
