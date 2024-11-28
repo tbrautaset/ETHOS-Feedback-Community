@@ -484,16 +484,16 @@
         "NewVersionLabel": "Nuova versione disponibile"
     },
     "Product": {
-        "Servos": "Servos",
-        "Transmitters": "Transmitters",
-        "Flight-Safe System": "Flight-Safe System",
-        "Accessories": "Accessories",
+        "Servos": "Servi",
+        "Transmitters": "Trasmettitori",
+        "Flight-Safe System": "Sistema Flight-Safe",
+        "Accessories": "Accessori",
         "ESC": "ESC",
-        "Modules": "Modules",
-        "Internal module": "Internal module",
-        "External module": "External module",
-        "Receivers": "Receivers",
-        "Sensors": "Sensors",
+        "Modules": "Moduli",
+        "Internal module": "Modulo Interno",
+        "External module": "Modulo Esterno",
+        "Receivers": "Riceventi",
+        "Sensors": "Sensori",
         "VTX": "VTX",
         "Radio": "Radio"
     }
