@@ -860,10 +860,10 @@ MISSING_THROTTLE,"Modèle sans moteur",
 SIX_POSITIONS_SWITCH,"Inter 6-POS",
 GYRO_X_AXIS,"Gyro Axe X",
 GYRO_Y_AXIS,"Gyro Axe Y",
-GYRO_LEFT,"Gyro Left"
-GYRO_RIGHT,"Gyro Right"
-GYRO_UP,"Gyro Up"
-GYRO_DOWN,"Gyro Down"
+GYRO_LEFT,"Gyro Gauche",
+GYRO_RIGHT,"Gyro Droite",
+GYRO_UP,"Gyro Haut",
+GYRO_DOWN,"Gyro Bas",
 AILERON_LETTER,"A",
 RUDDER_LETTER,"D",
 ELEVATOR_LETTER,"P",
