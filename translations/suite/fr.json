@@ -75,9 +75,9 @@
         "Flash": "Flash",
         "Download": "Télécharger",
         "MissingDiskError": "Lecteur non trouvé !",
-        "CannotReadModuleInfo": "Unable to get internal module information",
+        "CannotReadModuleInfo": "Information du module externe non disponible",
         "WaitingDisk": "En attente du disque ...",
-        "WaitingModuleInfo": "Waiting for module information ...",
+        "WaitingModuleInfo": "Information du module en cours...",
         "AbortedWithUnknownStatus": "Opération annulée sans raison connue",
         "ReceiveFailStatus": "Echec opération. La radio renvoie une erreur !",
         "RadioNoResponse": "Opération impossible. La radio ne répond pas.",
@@ -100,9 +100,9 @@
         "OpenDirectory": "Ouvrir répertoire",
         "SelectAll": "Tout sélectionner",
         "UnselectAll": "Déselectionner tout",
-        "Refresh": "Refresh",
-        "SystemFiles": "System files",
-        "Dismiss": "Dismiss"
+        "Refresh": "Rafraichir",
+        "SystemFiles": "Fichiers système",
+        "Dismiss": "Annuler"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Choisir votre version de composant vidéo",
@@ -154,7 +154,7 @@
         "NoFRSKFileFound": "Aucun fichier .frsk dans le Zip téléchargé",
         "MultipleFRSKDetected": "Plusieurs fichiers .frsk détectés. Sélectionner le fichier .frsk à flasher",
         "ProductList": "Liste produits",
-        "ProductAssets": "Game de produits"
+        "ProductAssets": "Gamme de produits"
     },
     "VersionTag": {
         "MissingRemoteVersion": "Version distante manquante",
@@ -162,7 +162,7 @@
         "OutOfDate": "Mise à jour disponible",
         "GreaterThanLatestRelease": "Supérieure à la version actuelle",
         "UpToDate": "à jour",
-        "Nightly": "Attenion version de développement "
+        "Nightly": "Version de développement "
     },
     "ImageManager": {
         "ImageManager": "Gestionnaire image",
@@ -201,18 +201,18 @@
         "RestoreSucceed": "Réinitialisation terminée ! Redémarrer la radio manuellement."
     },
     "RadioInfo": {
-        "RadioInfo": "Radio information",
-        "ManageEthos": "Manage ETHOS",
-        "ManageModule": "Manage internal module",
-        "ManageLua": "Manage Lua script",
-        "ManageDevice": "Manage external device",
-        "ManageModel": "Manage model"
+        "RadioInfo": "Information radio",
+        "ManageEthos": "Gérer ETHOS",
+        "ManageModule": "Gérer module interne",
+        "ManageLua": "Gérer script Lua",
+        "ManageDevice": "Gérer périphérique externe",
+        "ManageModel": "Gérér modèle"
     },
     "VersionMap": {
-        "RecommendUpdate": "We strongly recommend you update to {{ recommend }} for a better experience",
-        "MissingRequiredComponentVersion": "Missing required component version",
-        "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
-        "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly."
+        "RecommendUpdate": "Mise à jour recommandée {{ recommend }} ",
+        "MissingRequiredComponentVersion": "Version composant non disponible",
+        "TargetFirmwareNotCompatible": "Le firmawre {{ targetVersion }} du {{ targetComponent }} nécessite le firmware {{requireVersion }} avec le {{ requireComponent }}.",
+        "RequireUpdate": "Mettre à jour le firmawre {{ requireComponent }} vers la version {{ requireVersion }} en premier."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(Comparé avec la dernière version stable)",
