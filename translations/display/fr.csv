@@ -542,7 +542,7 @@ ALWAYS_ON,"Toujours",
 YES,"Oui",
 DIGITAL_RSSI,"RSSI numérique",
 GYRO,"Gyro",
-GYRO_SWITCHES,"Gyro switches"
+GYRO_SWITCHES,"Inters Gyro",
 LANGUAGE,"Langue",
 SWITCHES,"Inters",
 TOP_TOOLBAR,"Barre infos sup.",
