@@ -827,9 +827,9 @@ AND,"AND",
 OR,"OR",
 XOR,"XOR",
 SENSORS,"Capteurs",
-RECEIVERS,"Receivers"
-SERVOS,"Servos"
-FLIGHT_SAFETY,"Flight safety"
+RECEIVERS,"Récepteurs",
+SERVOS,"Servos",
+FLIGHT_SAFETY,"Sécurité Vol",
 VARIOMETER,"Vario",
 ALARMS,"Alarmes",
 SENSOR,"Capteur",
