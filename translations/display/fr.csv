@@ -804,7 +804,7 @@ NO_SD_CARD_WARNING,"Absence carte SD !",
 ADD_CURVE_ERROR,"Echec ajout courbe !",
 STEP,"Pas",
 AILERON,"Aileron",
-ELEVON,"Elevon"
+ELEVON,"Elevon",
 SPACE_WITH_CHANNEL," voie",
 QUESTION_SWAP_SSS_AND_SSS_CHANNELS_SETTINGS,"Echanger paramètres de %s et %s ?",
 INPUT,"Source",
