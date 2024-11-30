@@ -63,7 +63,7 @@
         "Finish": "beenden",
         "OK": "OK",
         "SwitchingToFirmwareMSC": "Wechsele zu Firmware (Mass storage mode) ...",
-        "SwitchingToFirmwareCDC": "Switching to firmware (Serial port mode) ...",
+        "SwitchingToFirmwareCDC": "Wechsele zu Firmware (Serial port mode) ...",
         "SwitchingToBootloader": "Wechsele zu Bootloader...",
         "FRSKInfo": ".frsk Information",
         "SuitableFor": "Passend für",
@@ -102,7 +102,7 @@
         "UnselectAll": "Alle abwählen",
         "Refresh": "Aktualisieren",
         "SystemFiles": "System-Dateien",
-        "Dismiss": "Dismiss"
+        "Dismiss": "Abbrechen"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Wählen Sie Ihre Video-Komponenten-Version",
@@ -128,7 +128,7 @@
         "DFUNotDetected": "DFU-Gerät nicht erkannt"
     },
     "DownloadCenter": {
-        "DownloadCenter": "Download Center",
+        "DownloadCenter": "Software Zentrum",
         "FlashLocalFRSK": "Flashe lokale .frsk",
         "SelectFRSK": ".frsk auswählen",
         "FileInfo": "Datei Info:",
@@ -171,7 +171,7 @@
         "MaxWidth": "Maximale Breite",
         "MaxHeight": "Maximale Höhe",
         "TranscodingImages": "Umwandlung von Bildern...",
-        "TheFollowingImagesFailedToTranscode": "Die Konvertierung der folgenden Bilder ist fehlgeschlagen:",
+        "TheFollowingImagesFailedToTranscode": "Die Umwandlung der folgenden Bilder ist fehlgeschlagen:",
         "RadioImages": "Sender-Bilder",
         "OutputSize": "Ausgabegröße",
         "ModelImage": "Modell-Bilder",
@@ -185,7 +185,7 @@
         "RadioAudios": "Audios im Sender"
     },
     "RepairTool": {
-        "RepairTool": "Reparatur Tool",
+        "RepairTool": "Reparatur-Werkzeuge",
         "FormatToolTitle": "Internen Speicher formatieren (X18 Serie, TW XLite Serie, XE Serie, X20 Pro)",
         "FormatToolSubTitle": "Wenn Ihr Sender nicht vom NAND lesen kann oder die Einstellungen nicht gespeichert werden können. Verbinden Sie sich bitte mit Suite und schalten Sie den Sender ein. Versuchen Sie dann dieses Tool.",
         "Formatting": "Formatierung...",
@@ -211,7 +211,7 @@
     "VersionMap": {
         "RecommendUpdate": "Wir empfehlen Ihnen dringend ein Update auf {{ recommend }} für eine bessere Leistung",
         "MissingRequiredComponentVersion": "Erforderliche Komponentenversion fehlt",
-        "TargetFirmwareNotCompatible": "Die {{ targetComponent }} Firmwareversion {{ targetVersion }} muss mit der {{ requireComponent }} Firmwareversion {{ requireVersion }}.",
+        "TargetFirmwareNotCompatible": "Die {{ targetComponent }} Firmwareversion {{ targetVersion }} muss mit der {{ requireComponent }} Firmwareversion {{ requireVersion }} verwendet werden.",
         "RequireUpdate": "Aktualisieren Sie bitte die {{ requireComponent }} Firmware auf Version {{ requireVersion }} zuerst."
     },
     "RadioTool": {
@@ -235,7 +235,7 @@
         "WriteOutdated": "Flashe veraltete Komponenten",
         "WriteFirmware": "Flashe Firmware",
         "WriteFirmwareAndSystemFiles": "Firmware- und Systemdateien schreiben",
-        "WriteAudio": "Flashe Audio Files",
+        "WriteAudio": "Flashe Audio-Dateien",
         "WriteSystemBitmaps": "Flashe System-Bilder",
         "DownloadingFirmware": "Firmware herunterladen...",
         "CopyingFirmwareToRadio": "Kopieren der Firmware auf den Sender...",
@@ -249,7 +249,7 @@
         "CopyingAudioPackToRadio": "Kopiere {{ lang }} Audio-Paket in den Sender...",
         "UpdateSuccess": "Update erfolgreich",
         "WriteBootloader": "Flashe Bootloader",
-        "DownloadingBootloader": "Downloaden des Bootloader...",
+        "DownloadingBootloader": "Downloaden des Bootloaders...",
         "CopyingBootloaderToRadio": "Kopiere Bootloader in den Sender...",
         "FlashingBootloader": "Flashing Bootloader...",
         "BootloaderFlashError": "Flash Bootloader Fehler!",
@@ -355,12 +355,12 @@
         "CheckForUpdate": "Nach Updates suchen",
         "AutoUpdateError": "Automatisches Update fehlgeschlagen",
         "DebugMode": "Debug Modus",
-        "ExportDebugTraces": "Debug-Traces exportieren",
+        "ExportDebugTraces": "Debug-Spuren exportieren",
         "Export": "Export",
         "DebugOptions": "Debug-Optionen"
     },
     "Documentation": {
-        "Documentation": "Dokumentation",
+        "Documentation": "Dokumentationen",
         "LuaDoc": "Lua Doku",
         "LuaDocDescription": "Dokumentation als Hilfe zum Schreiben eigener Lua Scripte.",
         "LuaExamples": "Lua Demo-Scripte",
@@ -420,7 +420,7 @@
         "FailToDownload": "Der Download der folgenden i18n-Dateien ist fehlgeschlagen:"
     },
     "LuaDevTool": {
-        "LuaDevTool": "Lua-Entwicklungstools",
+        "LuaDevTool": "Lua-Entwicklungs-Werkzeuge",
         "DebugLog": "Debug log",
         "StartDebug": "Start debug",
         "StartingDebug": "Starten des Debug-Modus ...",
@@ -436,7 +436,7 @@
         "MultipleFrskyPortDetected": "Mehrere verfügbare serielle FrSky-Sender-Ports erkannt. Bitte wählen Sie den seriellen Port aus, den Sie zum Debuggen öffnen möchten.",
         "LuaInstall": "Lua-Skripte installieren",
         "LuaInstallDescription": "Hilft Ihnen, Lua-Skripte aus einer ZIP-Datei auf Ihrem Sender zu installieren",
-        "OpenZip": "Öffnen .zip",
+        "OpenZip": ".zip-Datei öffnen",
         "AnalysingFiles": "Dateien analysieren  ...",
         "NoFileSelected": "Keine Datei ausgewählt!",
         "ScriptsInstalled": "Installierte Skripte",
@@ -453,8 +453,8 @@
         "ScriptNotFound": "Skript nicht gefunden!",
         "DownloadScriptSuccessfully": "Skript erfolgreich heruntergeladen!",
         "SavingScript": "Skript speichern ...",
-        "StartingInstallScripts": "Beginnen Sie mit der Installation des Skriptes ...",
-        "StartingDownloadScripts": "Beginnen Sie mit dem Herunterladen des Skriptes ...",
+        "StartingInstallScripts": "Beginnen Sie mit der Installation des Skripts ...",
+        "StartingDownloadScripts": "Beginnen Sie mit dem Herunterladen des Skripts ...",
         "AnalysingFile": "Analysieren der Datei ...",
         "FailToInstallScripts": "Die Installation des Skripts ist fehlgeschlagen!",
         "WritingScriptsInfo": "Informationen zum Schreiben von Skripten ...",
@@ -476,7 +476,7 @@
         "UpdaterNotFound": "Update-Download-URL nicht gefunden",
         "DownloadingUpdater": "Update wird heruntergeladen. Abgeschlossen {{ progress }}% ...",
         "ConfirmCancelDownload": "Bestätigen Sie den Downloadabbruch",
-        "ConfirmCancelDownloadLabel": "Möchten Sie den Download wirklich abbrechen? Sie können den Download später erneut starten, der Fortschritt wird jedoch nicht gespeichert.",
+        "ConfirmCancelDownloadLabel": "Möchten Sie den Download wirklich abbrechen? Sie können den Download später erneut starten, das Geladene wird jedoch nicht gespeichert.",
         "NetworkError": "Während des Herunterladens des Updates ist ein Netzwerkfehler aufgetreten.",
         "UpdateDownloadedLabel": "Das Update-Installationsprogramm wurde heruntergeladen. Möchten Sie?",
         "InstallUpdate": "Update wird installiert",
@@ -486,16 +486,16 @@
     },
     "Product": {
         "Servos": "Servos",
-        "Transmitters": "Transmitters",
+        "Transmitters": "Sender",
         "Flight-Safe System": "Flight-Safe System",
-        "Accessories": "Accessories",
-        "ESC": "ESC",
-        "Modules": "Modules",
-        "Internal module": "Internal module",
-        "External module": "External module",
-        "Receivers": "Receivers",
-        "Sensors": "Sensors",
+        "Accessories": "Zubehör",
+        "ESC": "Regler",
+        "Modules": "Module",
+        "Internal module": "Interne Module",
+        "External module": "Externe Module",
+        "Receivers": "Empfänger",
+        "Sensors": "Sensoren",
         "VTX": "VTX",
-        "Radio": "Radio"
+        "Radio": "Sender"
     }
 }
