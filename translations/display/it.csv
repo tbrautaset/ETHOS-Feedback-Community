@@ -298,7 +298,7 @@ DISCONNECT,"Disconnetti",
 WAITING_FOR_DEVICE,"Attesa connessione",
 DIST_ADDRESS,"Indirizzo Dist",
 CONNECTING,"Connessione",
-ROTARY_ENCODER_HALF_STEPS,"Rotary encoder half steps"
+ROTARY_ENCODER_HALF_STEPS,"Encoder Rotella passo dimezzato steps"
 BLUETOOTH_AUDIO,"Audio Bluetooth"
 NOT_INSTALLED,"Non Installato (default)"
 INSTALLED_AS_AN_OPTION,"Installato come opzione"
