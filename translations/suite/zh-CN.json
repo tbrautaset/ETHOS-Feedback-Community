@@ -213,7 +213,7 @@
         "MissingRequiredComponentVersion": "缺少必要的组件版本",
         "TargetFirmwareNotCompatible": "你即将升级的 {{ targetComponent }} {{ targetVersion }} 需要与 {{ requireComponent }} {{ requireVersion }} 配合使用.",
         "RequireUpdate": "请先将 {{ requireComponent }} 升级到版本 {{ requireVersion }}.",
-        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version 3.0.0 or above."
+        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version {{ version }} or above."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(与最新的稳定版比较)",

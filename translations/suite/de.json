@@ -213,7 +213,7 @@
         "MissingRequiredComponentVersion": "Erforderliche Komponentenversion fehlt",
         "TargetFirmwareNotCompatible": "Die {{ targetComponent }} Firmwareversion {{ targetVersion }} muss mit der {{ requireComponent }} Firmwareversion {{ requireVersion }} verwendet werden.",
         "RequireUpdate": "Aktualisieren Sie bitte die {{ requireComponent }} Firmware auf Version {{ requireVersion }} zuerst.",
-        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version 3.0.0 or above."
+        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version {{ version }} or above."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(Verglichen mit der letzten stabilen Version)",
