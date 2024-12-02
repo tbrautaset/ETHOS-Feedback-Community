@@ -48,7 +48,7 @@
         "Audio": "Lyd",
         "SystemBitmaps": "System-ikoner",
         "UserBitmaps": "Brukerens bildefiler",
-        "Scripts": "Skript",
+        "Scripts": "Script",
         "Models": "Modeller",
         "Logs": "Logger",
         "Screenshots": "Skjermbilder",
@@ -75,9 +75,9 @@
         "Flash": "Flash",
         "Download": "Last ned",
         "MissingDiskError": "Mangler 'disk'!",
-        "CannotReadModuleInfo": "Unable to get internal module information",
+        "CannotReadModuleInfo": "Klarer ikke å hente intern-modul informasjon",
         "WaitingDisk": "Venter på disken...",
-        "WaitingModuleInfo": "Waiting for module information ...",
+        "WaitingModuleInfo": "Venter på modul-informasjon ...",
         "AbortedWithUnknownStatus": "Operasjonen ble avsluttet med ukjent status",
         "ReceiveFailStatus": "Operasjonen feilet. Radioen har sendt tilbake en feil!",
         "RadioNoResponse": "Operasjonen er avsluttet. Ingen respons fra radioen.",
@@ -100,9 +100,9 @@
         "OpenDirectory": "Åpne mappe",
         "SelectAll": "Velg alt",
         "UnselectAll": "Opphev alle valg",
-        "Refresh": "Refresh",
-        "SystemFiles": "System files",
-        "Dismiss": "Dismiss"
+        "Refresh": "Last på nytt",
+        "SystemFiles": "System filer",
+        "Dismiss": "Avvis"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Velg din video-komponent-versjon",
@@ -177,7 +177,7 @@
         "ModelImage": "Bilde av modell",
         "GPSImage": "GPS bilde",
         "WidgetImage": "Brukerens bilde",
-        "RightDirectory": "Høyre mappe"
+        "RightDirectory": "Mappe i Høyre kolonne"
     },
     "AudioManager": {
         "AudioManager": "Lydhåndterer",
@@ -201,19 +201,19 @@
         "RestoreSucceed": "Vellykket gjenoppretting av fabrikkinnstillinger! Ta en manuell omstart av radioen!"
     },
     "RadioInfo": {
-        "RadioInfo": "Radio information",
-        "ManageEthos": "Manage ETHOS",
-        "ManageModule": "Manage internal module",
-        "ManageLua": "Manage Lua script",
-        "ManageDevice": "Manage external device",
-        "ManageModel": "Manage model"
+        "RadioInfo": "Radio informasjon",
+        "ManageEthos": "Behandle ETHOS",
+        "ManageModule": "Behandle intern modul",
+        "ManageLua": "Behandle Lua script",
+        "ManageDevice": "Behandle ekstern enhet",
+        "ManageModel": "Behandle model"
     },
     "VersionMap": {
-        "RecommendUpdate": "We strongly recommend you update to {{ recommend }} for a better experience",
-        "MissingRequiredComponentVersion": "Missing required component version",
-        "TargetFirmwareNotCompatible": "The {{ targetComponent }} firmware version {{ targetVersion }} needs to be used with the {{ requireComponent }} firmware version {{ requireVersion }}.",
-        "RequireUpdate": "Please update the {{ requireComponent }} firmware to version {{ requireVersion }} firstly.",
-        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version {{ version }} or above."
+        "RecommendUpdate": "Vi vil sterkt oppfordre deg å oppdatere til {{ recommend }} for å få en bedre opplevelse",
+        "MissingRequiredComponentVersion": "Mangler nødvendig komponent-versjon",
+        "TargetFirmwareNotCompatible": "{{ targetComponent }} firmware versjon {{ targetVersion }} trenger å bli brukt med {{ requireComponent }} firmware versjon {{ requireVersion }}.",
+        "RequireUpdate": "Vennligst oppdater {{ requireComponent }} firmware til versjon {{ requireVersion }} først.",
+        "CheckRxVersion": "Vennligst sørg for at 'Firmwaren' i mottakerne som skal brukes med denne modulen også er oppdatert til versjon {{ version }} eller nyere."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(Sammenlignet med den siste stabile versjonen)",
@@ -450,24 +450,24 @@
         "NoScriptsFound": "Ingen 'script' funnet i .zip filen!"
     },
     "LuaLib": {
-        "LuaLib": "Lua library",
-        "DownloadingScript": "Downloading scripts ...",
-        "ScriptNotFound": "Script not found!",
-        "DownloadScriptSuccessfully": "Download scirpt successfully!",
-        "SavingScript": "Saving scripts ...",
-        "StartingInstallScripts": "Starting installing scripts ...",
-        "StartingDownloadScripts": "Starting downloading scripts ...",
-        "AnalysingFile": "Analysing the file ...",
-        "FailToInstallScripts": "Failed to install scripts!",
-        "WritingScriptsInfo": "Writing scripts information ...",
-        "LoadingScriptsFromRadio": "Loading scripts from radio ...",
-        "RemoteLibrary": "Remote library",
-        "RadioScripts": "Radio scripts",
-        "Install": "Install",
-        "InstalledScript": "Installed script",
-        "InstallLatest": "Install latest",
+        "LuaLib": "Lua bibliotek",
+        "DownloadingScript": "Laster ned script ...",
+        "ScriptNotFound": "Script ikke funnet!",
+        "DownloadScriptSuccessfully": "Vellykket nedlasting av script!",
+        "SavingScript": "Lagrer script ...",
+        "StartingInstallScripts": "Starter installering av script ...",
+        "StartingDownloadScripts": "Starter nedlasting av script ...",
+        "AnalysingFile": "Analyserer filen ...",
+        "FailToInstallScripts": "Installasjon av script feilet!",
+        "WritingScriptsInfo": "Skriver script informasjon ...",
+        "LoadingScriptsFromRadio": "Laster script fra radio ...",
+        "RemoteLibrary": "Eksterne bibliotek",
+        "RadioScripts": "Radio script",
+        "Install": "Installer",
+        "InstalledScript": "Installerte script",
+        "InstallLatest": "Installer nyeste",
         "Reinstall": "Reinstall",
-        "ScriptInfo": "Script information"
+        "ScriptInfo": "Script informatsjon"
     },
     "Updater": {
         "NewVersionAvailable": "En ny 'Ethos Suite'-version, versjon {{ version }}, er tilgjengelig!",
@@ -487,16 +487,16 @@
         "NewVersionLabel": "Ny versjon tilgjengelig"
     },
     "Product": {
-        "Servos": "Servos",
-        "Transmitters": "Transmitters",
+        "Servos": "Servoer",
+        "Transmitters": "Sendere",
         "Flight-Safe System": "Flight-Safe System",
-        "Accessories": "Accessories",
+        "Accessories": "Tilbehør",
         "ESC": "ESC",
-        "Modules": "Modules",
-        "Internal module": "Internal module",
-        "External module": "External module",
-        "Receivers": "Receivers",
-        "Sensors": "Sensors",
+        "Modules": "Moduler",
+        "Internal module": "Intern modul",
+        "External module": "Extern modul",
+        "Receivers": "Mottakere",
+        "Sensors": "Sensorer",
         "VTX": "VTX",
         "Radio": "Radio"
     }
