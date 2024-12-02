@@ -19,7 +19,7 @@ VARS,"Vars",
 NO_VAR_HINT,"Aucune Var. Appuyer sur le bouton '+' pour en créer une !",
 ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_VAR,"Suppression Var ?",
 TRAINER,"Ecolage",
-DEVICE_CONFIG,"Capteurs",
+DEVICE_CONFIG,"Config périph",
 LAST_MODIFICATION,"Dernière modification","Date mod."
 CLONE,"Dupliquer",
 MODEL_MATCH,"ID Modèle",
