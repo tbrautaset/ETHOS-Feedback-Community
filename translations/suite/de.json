@@ -30,7 +30,7 @@
     "ToolCommon": {
         "FatalErrorOccurred": "Fataler Fehler aufgetreten",
         "ErrorLoggedTo": "Die Fehler wurden in das Ereignisprotokoll geschrieben, das sich im Verzeichnis {{ path }} befindet. Wenn Sie diesen Dialog nicht schließen können, starten Sie Ethos Suite neu.",
-        "OpenDirectoryAfterTranscode":  "Ordner nach der Umwandlung öffnen",
+        "OpenDirectoryAfterTranscode": "Ordner nach der Umwandlung öffnen",
         "OpenDirectoryWithExplorer": "Ordner mit Datei-Explorer öffnen",
         "ClearAll": "Alle löschen",
         "Transcode": "Umwandlung",
@@ -212,7 +212,8 @@
         "RecommendUpdate": "Wir empfehlen Ihnen dringend ein Update auf {{ recommend }} für eine bessere Leistung",
         "MissingRequiredComponentVersion": "Erforderliche Komponentenversion fehlt",
         "TargetFirmwareNotCompatible": "Die {{ targetComponent }} Firmwareversion {{ targetVersion }} muss mit der {{ requireComponent }} Firmwareversion {{ requireVersion }} verwendet werden.",
-        "RequireUpdate": "Aktualisieren Sie bitte die {{ requireComponent }} Firmware auf Version {{ requireVersion }} zuerst."
+        "RequireUpdate": "Aktualisieren Sie bitte die {{ requireComponent }} Firmware auf Version {{ requireVersion }} zuerst.",
+        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version 3.0.0 or above."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(Verglichen mit der letzten stabilen Version)",
