@@ -128,7 +128,7 @@
         "DFUNotDetected": "DFU-Gerät nicht erkannt"
     },
     "DownloadCenter": {
-        "DownloadCenter": "Software Zentrum",
+        "DownloadCenter": "Software Bereich",
         "FlashLocalFRSK": "Flashe lokale .frsk",
         "SelectFRSK": ".frsk auswählen",
         "FileInfo": "Datei Info:",
@@ -213,7 +213,7 @@
         "MissingRequiredComponentVersion": "Erforderliche Komponentenversion fehlt",
         "TargetFirmwareNotCompatible": "Die {{ targetComponent }} Firmwareversion {{ targetVersion }} muss mit der {{ requireComponent }} Firmwareversion {{ requireVersion }} verwendet werden.",
         "RequireUpdate": "Aktualisieren Sie bitte die {{ requireComponent }} Firmware auf Version {{ requireVersion }} zuerst.",
-        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version {{ version }} or above."
+        "CheckRxVersion": "Bitte stellen Sie sicher, dass die Firmware der mit diesem Modul verwendeten Empfänger ebenfalls auf die Version {{ version }} oder höher aktualisiert wird."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(Verglichen mit der letzten stabilen Version)",
@@ -488,7 +488,7 @@
     "Product": {
         "Servos": "Servos",
         "Transmitters": "Sender",
-        "Flight-Safe System": "Flight-Safe System",
+        "Flight-Safe System": "Akkuweichen & Co",
         "Accessories": "Zubehör",
         "ESC": "Regler",
         "Modules": "Module",
@@ -496,7 +496,7 @@
         "External module": "Externe Module",
         "Receivers": "Empfänger",
         "Sensors": "Sensoren",
-        "VTX": "VTX",
+        "VTX": "Video-Übertragungssysteme",
         "Radio": "Sender"
     }
 }
