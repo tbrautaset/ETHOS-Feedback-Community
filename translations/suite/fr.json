@@ -150,7 +150,7 @@
         "LuaScripts": "Scripts Lua",
         "DownloadFirmware": "Télécharger Firmware",
         "DownloadScripts": "Télécharger scripts",
-        "DownloadAssetSuccessfully": "Game de produits téléchargé !",
+        "DownloadAssetSuccessfully": "Gamme de produits téléchargé !",
         "NoFRSKFileFound": "Aucun fichier .frsk dans le Zip téléchargé",
         "MultipleFRSKDetected": "Plusieurs fichiers .frsk détectés. Sélectionner le fichier .frsk à flasher",
         "ProductList": "Liste produits",
