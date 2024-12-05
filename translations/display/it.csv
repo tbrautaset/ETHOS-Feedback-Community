@@ -337,7 +337,7 @@ ALWAYS_ON,"Attivo",
 YES,"Si",
 DIGITAL_RSSI,"RSSI Digitale",
 GYRO,"Gyro",
-GYRO_SWITCHES,"Gyro switches"
+GYRO_SWITCHES,"Interruttori Gyro"
 LANGUAGE,"Lingua",
 SWITCHES,"Interruttori",
 TOP_TOOLBAR,"Barra Superiore",
@@ -680,8 +680,8 @@ AND,"AND",
 OR,"OR",
 XOR,"XOR",
 SENSORS,"Sensori",
-RECEIVERS,"Receivers"
-SERVOS,"Servos"
+RECEIVERS,"Riceventi"
+SERVOS,"Servi"
 FLIGHT_SAFETY,"Flight safety"
 VARIOMETER,"Variometro",
 ALARMS,"Allarmi",
@@ -759,12 +759,12 @@ HELI_PITCH,"Passo",
 HELI_GYRO,"Gyro",
 MISSING_THROTTLE,"Il tuo modello non ha nessun controllo gas",
 SIX_POSITIONS_SWITCH,"Interruttore 6-POS",
-GYRO_X_AXIS,"Gyro X Axis",
-GYRO_Y_AXIS,"Gyro Y Axis",
-GYRO_LEFT,"Gyro Left"
-GYRO_RIGHT,"Gyro Right"
-GYRO_UP,"Gyro Up"
-GYRO_DOWN,"Gyro Down"
+GYRO_X_AXIS,"Asse X Gyro",
+GYRO_Y_AXIS,"Asse Y Gyro",
+GYRO_LEFT,"Gyro Sinistra"
+GYRO_RIGHT,"Gyro Destra"
+GYRO_UP,"Gyro Su"
+GYRO_DOWN,"Gyro Giu"
 AILERON_LETTER,"A",
 RUDDER_LETTER,"R",
 ELEVATOR_LETTER,"E",
