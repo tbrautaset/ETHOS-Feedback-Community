@@ -1,6 +1,6 @@
 -- RB25S Calibration Configure
 
-local translations = {en="RB25S Calibration"}
+local translations = {en="RB25S calibration"}
 
 local function name(widget)
   local locale = system.getLocale()
@@ -39,7 +39,7 @@ local function create()
   step = 0
   calibrationState = CALIBRATION_INIT 
 
-  local sensor = sport.getSensor({appIdStart=0xF10, appIdEnd=0xF1F});
+  local sensor = sport.getSensor({appIdStart=0x0F10, appIdEnd=0x0F1F});
 
   bitmap = lcd.loadBitmap("/scripts/RB25S_Calibration/cali_"..step..".png")
 
@@ -124,10 +124,4 @@ local function close(widget)
   widget.sensor:idle(false)
 end
 
-local icon = lcd.loadMask("rb25.png")
-
-local function init()
-  system.registerSystemTool({name=name, icon=icon, create=create, paint=paint, wakeup=wakeup, event=event, close=close})
-end
-
-return {init=init}
+return {name=name, create=create, paint=paint, wakeup=wakeup, event=event, close=close}

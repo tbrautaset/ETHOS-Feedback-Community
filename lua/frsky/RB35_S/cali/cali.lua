@@ -1,6 +1,6 @@
 -- RB35S Calibration Configure
 
-local translations = {en="RB35S Calibration"}
+local translations = {en="RB35S calibration"}
 
 local function name(widget)
   local locale = system.getLocale()
@@ -39,7 +39,7 @@ local function create()
   step = 0
   calibrationState = CALIBRATION_INIT 
 
-  local sensor = sport.getSensor({appIdStart=0xF00, appIdEnd=0xF0F});
+  local sensor = sport.getSensor({appIdStart=0x0F00, appIdEnd=0x0F0F});
 
   bitmap = lcd.loadBitmap("/scripts/RB35S_Calibration/cali_"..step..".png")
 
@@ -77,19 +77,19 @@ local function wakeup(widget)
     end
     if calibrationState == CALIBRATION_WRITE then
       print("CALIBRATION_WRITE")
-      if widget.sensor:writeParameter(0x60, step) == true then
+      if widget.sensor:writeParameter(0xB2, step) == true then
         calibrationState = CALIBRATION_READ
       end
     elseif calibrationState == CALIBRATION_READ then
       print("CALIBRATION_READ")
-      if widget.sensor:requestParameter(0x60) == true then
+      if widget.sensor:requestParameter(0xB2) == true then
         calibrationState = CALIBRATION_WAIT
       end
     elseif calibrationState == CALIBRATION_WAIT then
       local value = widget.sensor:getParameter()
       if value then
         local fieldId = value % 256
-        if fieldId == 0x60 then
+        if fieldId == 0xB2 then
           if step == 5 then
             calibrationState = CALIBRATION_OK
             bitmap = lcd.loadBitmap("/scripts/RB35S_Calibration/cali_ok.png")
@@ -120,14 +120,8 @@ local function event(widget, category, value, x, y)
   return false
 end
 
-local icon = lcd.loadMask("rb35.png")
-
 local function close(widget)
   widget.sensor:idle(false)
 end
 
-local function init()
-  system.registerSystemTool({name=name, icon=icon, create=create, paint=paint, wakeup=wakeup, event=event, close=close})
-end
-
-return {init=init}
+return {name=name, create=create, paint=paint, wakeup=wakeup, event=event, close=close}
