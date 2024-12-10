@@ -298,7 +298,7 @@ DISCONNECT,"Disconnetti",
 WAITING_FOR_DEVICE,"Attesa connessione",
 DIST_ADDRESS,"Indirizzo Dist",
 CONNECTING,"Connessione",
-ROTARY_ENCODER_HALF_STEPS,"Encoder Rotella passo dimezzato steps"
+ROTARY_ENCODER_HALF_STEPS,"Encoder Rotella passo dimezzato"
 BLUETOOTH_AUDIO,"Audio Bluetooth"
 NOT_INSTALLED,"Non Installato (default)"
 INSTALLED_AS_AN_OPTION,"Installato come opzione"
@@ -682,7 +682,7 @@ XOR,"XOR",
 SENSORS,"Sensori",
 RECEIVERS,"Riceventi"
 SERVOS,"Servi"
-FLIGHT_SAFETY,"Flight safety"
+FLIGHT_SAFETY,"Sistema Flight-Safe"
 VARIOMETER,"Variometro",
 ALARMS,"Allarmi",
 SENSOR,"Sensore",
