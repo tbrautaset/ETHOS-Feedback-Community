@@ -103,7 +103,7 @@
         "Refresh": "Last på nytt",
         "SystemFiles": "System filer",
         "Dismiss": "Avvis",
-        "ShowPrereleases": "Show pre-releases"
+        "ShowPrereleases": "Vis 'Pre-releases'"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Velg din video-komponent-versjon",
@@ -468,7 +468,7 @@
         "InstalledScript": "Installerte script",
         "InstallLatest": "Installer nyeste",
         "Reinstall": "Reinstall",
-        "ScriptInfo": "Script informatsjon"
+        "ScriptInfo": "Script informasjon"
     },
     "Updater": {
         "NewVersionAvailable": "En ny 'Ethos Suite'-version, versjon {{ version }}, er tilgjengelig!",
