@@ -682,7 +682,7 @@ XOR,"XOR",
 SENSORS,"Sensori",
 RECEIVERS,"Riceventi"
 SERVOS,"Servi"
-FLIGHT_SAFETY,"Sistema Flight-Safe"
+FLIGHT_SAFETY,"Flight-Safety"
 VARIOMETER,"Variometro",
 ALARMS,"Allarmi",
 SENSOR,"Sensore",
