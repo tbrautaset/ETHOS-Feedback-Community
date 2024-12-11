@@ -102,7 +102,8 @@
         "UnselectAll": "取消选择所有",
         "Refresh": "刷新",
         "SystemFiles": "系统文件",
-        "Dismiss": "忽略"
+        "Dismiss": "忽略",
+        "ShowPrereleases": "显示预发布版本"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "选择你的视频组件版本",
@@ -213,7 +214,7 @@
         "MissingRequiredComponentVersion": "缺少必要的组件版本",
         "TargetFirmwareNotCompatible": "你即将升级的 {{ targetComponent }} {{ targetVersion }} 需要与 {{ requireComponent }} {{ requireVersion }} 配合使用.",
         "RequireUpdate": "请先将 {{ requireComponent }} 升级到版本 {{ requireVersion }}.",
-        "CheckRxVersion": "Please ensure that the firmware of the receivers used with this module is also upgraded to version {{ version }} or above."
+        "CheckRxVersion": "请确保与本遥控器模块配合使用的接收机已经升级至 {{ version }} 或者更高版本."
     },
     "RadioTool": {
         "ComparedWithTheLatestStabVersion": "(与最新的稳定版比较)",

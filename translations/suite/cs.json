@@ -101,7 +101,8 @@
         "UnselectAll": "Zrušit výběr",
         "Refresh": "Refresh",
         "SystemFiles": "System files",
-        "Dismiss": "Dismiss"
+        "Dismiss": "Dismiss",
+        "ShowPrereleases": "Show pre-releases"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Vyberte verzi komponenty videa",

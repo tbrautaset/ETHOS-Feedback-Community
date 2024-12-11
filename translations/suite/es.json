@@ -98,7 +98,8 @@
         "UnselectAll": "Deseleccionar todo",
         "Refresh": "Refrescar",
         "SystemFiles": "Archivos de sistema",
-        "Dismiss": "Descartar"
+        "Dismiss": "Descartar",
+        "ShowPrereleases": "Show pre-releases"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Elija su versión de video componente",
