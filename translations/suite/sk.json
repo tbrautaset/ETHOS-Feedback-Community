@@ -20,7 +20,7 @@
     },
     "Welcome": {
         "WelcomeToEthosSuite": "Vitajte v Ethos Suite",
-        "P1": "Pred spustením aktualizácie firmwéru zálohujte súbory model.bin a radio.bin. Ethos Suite vykoná konverziu modelu zo staršej na novšiu, ale nie naopak. Zálohované súbory sú potrebné na návrat k predchádzajúcim verziám verzím.",
+        "P1": "Pred spustením aktualizácie firmwéru zálohujte súbory model.bin a radio.bin. Ethos Suite vykoná konverziu modelu zo staršej na novšiu, ale nie naopak. Zálohované súbory sú potrebné na návrat k predchádzajúcim verziám.",
         "P2": "Po aktualizácii skontrolujte nastavenie modelu pred letom, aby ste se uistili, že všetko funguje správne.",
         "LatestRelease": "Aktuálne vydanie"
     },
@@ -488,7 +488,7 @@
     },
     "Product": {
         "Servos": "Servá",
-        "Transmitters": "Vysielkače",
+        "Transmitters": "Vysielače",
         "Flight-Safe System": "Letové bezpečnostné systémy",
         "Accessories": "Príslušenstvo",
         "ESC": "ESC",
