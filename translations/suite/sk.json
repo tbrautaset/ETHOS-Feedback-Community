@@ -76,7 +76,7 @@
         "Download": "Sťahovanie",
         "MissingDiskError": "Chýba disk!",
         "CannotReadModuleInfo": "Neviem načítať informácie o internom module",
-        "WaitingDisk": "Waiting for disk...",
+        "WaitingDisk": "Čakám na disk...",
         "WaitingModuleInfo": "Čakám na informácie o module ...",
         "AbortedWithUnknownStatus": "Operácia zastavená s neznámym stavom",
         "ReceiveFailStatus": "Operácia zlyhala. Rádio vrátilo chybu!",
@@ -151,11 +151,11 @@
         "LuaScripts": "Lua skripty",
         "DownloadFirmware": "Stiahnutie firmvéru",
         "DownloadScripts": "Stiahnutie skriptov",
-        "DownloadAssetSuccessfully": "Dielo bolo úspešne stiahnuté!",
+        "DownloadAssetSuccessfully": "Verzia bola úspešne stiahnutá!",
         "NoFRSKFileFound": "Žiadny .frsk súbor nebol nájdený v zip balíku",
         "MultipleFRSKDetected": "Viac nájdených .frsk súborov. Prosím vyberte .frsk súbor pre zápis",
         "ProductList": "Zoznam produktov",
-        "ProductAssets": "Aktíva produktu"
+        "ProductAssets": "Dostupné verzie"
     },
     "VersionTag": {
         "MissingRemoteVersion": "Chýba vzdialená verzia",
