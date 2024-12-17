@@ -368,6 +368,7 @@ LONGITUDE,"Longitude",
 GPS_MAP,"Carte GPS",
 MAP,"Carte",
 INTERNAL_GPS,"GPS interne",
+RAM_AVAILABLE,"RAM available"
 CLOCK,"Horloge",
 TRIP,"Parcours",
 RB_30_40,"RB 30/40",

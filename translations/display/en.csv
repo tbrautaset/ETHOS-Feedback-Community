@@ -498,6 +498,7 @@ ROLL_ANGLE,"R.angle",
 PITCH_ANGLE,"P.angle",
 HYDRAULIC_PRESSURE,"H.pressure",
 INTERNAL_GPS,"Internal GPS",
+RAM_AVAILABLE,"RAM available"
 CLOCK,"Clock",
 LATITUDE,"Latitude",
 LONGITUDE,"Longitude",
