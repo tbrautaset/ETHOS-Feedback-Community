@@ -42,7 +42,7 @@
         "ReleaseDate": "Dátum vydania",
         "Detail": "Detail",
         "DownloadFailed": "Stiahnutie zlyhalo!",
-        "AssetError": "Chyba aktív!",
+        "AssetError": "Chyba dostupnej verzie!",
         "Cancelled": "Zrušené",
         "Success": "Hotovo",
         "Audio": "Audio",
@@ -112,7 +112,7 @@
         "Version2": "Verzia 2"
     },
     "DFUFlasher": {
-        "DFUFlasher": "DFU zapisovač",
+        "DFUFlasher": "DFU inštalátor",
         "ChooseBootloaderBin": "Vyberte súbor bootloaderu",
         "SelectBootloader": "Vyberte bootloader",
         "BootloaderInfo": "Bootloader Info:",
@@ -120,8 +120,8 @@
         "NotSuitable": "Tento súbor .frsk nie je vhodný pre vaše rádio. Upozorňujeme, že môže dôjsť k poškodeniu!",
         "UnknownFile": "Neznámy súbor. Upozorňujeme, že to môže zpôsobiť poškodenie vašeho zariadenia!",
         "ClickToFlash": "Kliknutím spustíte zápis bootloaderu",
-        "Success": "Zápis bootloaderu bol úspešný!",
-        "Failed": "Zápis zlyhal!",
+        "Success": "Aktualizácia bootloaderu bola úspešná!",
+        "Failed": "Aktualizácia zlyhala!",
         "FlashingBootloader": "Nahrávam bootloader...",
         "DFUWriting": "DFU zápis, OK {{ value }} % ...",
         "PermissionDenied": "Prístup zamietnutý!",
@@ -253,11 +253,11 @@
         "WriteBootloader": "Zápis bootloadera",
         "DownloadingBootloader": "Sťahovanie bootloadera...",
         "CopyingBootloaderToRadio": "Kopírovanie bootloadera do rádia...",
-        "FlashingBootloader": "Zápis bootloader...",
-        "BootloaderFlashError": "Chyba zápisu bootloadera!",
+        "FlashingBootloader": "Aktualizácia bootloadera...",
+        "BootloaderFlashError": "Chyba aktualizácie bootloadera!",
         "VersionNotSupportedToStartFirmware": "Táto verzia bootloadera nepodporuje prepnutie do firmwéru!",
         "VersionNotSupportedToStartBootloader": "Táto verzia firmwéru nepodporuje prepnutie do bootloadera!",
-        "OperationCancelled": "Opreácia je zrušená!",
+        "OperationCancelled": "Operácia je zrušená!",
         "ComponentNotFound": "Zodpovedajúci komponent sa nepodarilo nájsť!",
         "DownloadFailed": "Sťahovanie zlyhalo!",
         "StartUpdating": "Štart aktualizácie...",
@@ -274,7 +274,7 @@
         "AudioPathChanged": "Nasledujúce systémové zvukové priečinky už firmvér nepoužíva z dôvodu aktualizácie verzie systému. Odporúča sa odstrániť priečinok. Je to v poriadku?",
         "TestingVersion": "Testovacia verzia",
         "GoToModuleManager": "Choď do Správca modulov",
-        "GoToDownloadCenter": "Choď na centrum sťahovania",
+        "GoToDownloadCenter": "Choď na Centrum sťahovania",
         "LatestBootloaderRequired": "Je potrebná posledná verzia bootloadera!",
         "ConfirmUpdateBootloaderFirstly": "Firmvér vybraného vydania vyžaduje aktualizovaný bootloader. Alebo vaše rádio nebude správne fungovať. Potvrdzujete, že najskôr aktualizujete svoj bootloader?",
         "ConfirmBackup": "Potvrďte zálohu",
@@ -285,7 +285,7 @@
     "RFModule": {
         "RFModule": "RF Modul",
         "GoToEthosManage": "Choď  do Ethos manažéra",
-        "ModuleFirmwareList": "Zozanm firmvéru pre RF moduly",
+        "ModuleFirmwareList": "Zoznam firmvéru pre RF moduly",
         "FirmwareDetail": "Informácie o firmvéri",
         "FlashModule": "Zápis modulu"
     },
@@ -294,7 +294,7 @@
         "BackupYourRadio": "Zálohuj rádio",
         "BackupLocation": "Lokácia zálohy",
         "LastBackupTime": "Posledný čas vytvorenia zálohy",
-        "NotBackupYet": "Radio nie je zálohované",
+        "NotBackupYet": "Rádio nie je zálohované",
         "Backup": "Záloha",
         "Restore": "Obnovenie",
         "ModelsList": "Zoznam modelov",
@@ -326,7 +326,7 @@
         "BackupDate": "Dátum zálohovania",
         "BackupComponents": "Zálohované komponenty",
         "AnalysingComponents": "Analyzovanie komponentov...",
-        "BackupNotMatchRadio": "Táto záloha sa nezhoduje s vaším rádiom. Chcete pokračovať?",
+        "BackupNotMatchRadio": "Táto záloha sa nezhoduje s vašim rádiom. Chcete pokračovať?",
         "WritingBackupFile": "Zapisuje sa záložný súbor..."
     },
     "About": {
@@ -400,7 +400,7 @@
         "FrskGuideFinish": "Znova pripojte rádio a kliknite na \"Finish\" tlačidlo po dokončení aktualizácie"
     },
     "FlashGuide": {
-        "FlashGuideTitle": "Automatické zápis sa nespustil úspešne. Dokončite proces manuálne podľa pokynov",
+        "FlashGuideTitle": "Automatická aktualizácia sa nespustila úspešne. Dokončite proces manuálne podľa pokynov",
         "FlashGuideStep": "Súbor firmware.bin pripravený. Stačí odpojiť USB kábel a aktualizácia sa spustí automaticky",
         "FlashGuideFinish": "Znova pripojte rádio a kliknite na \"Finish\" tlačidlo po dokončení aktualizácie"
     },
@@ -409,7 +409,7 @@
         "NandBootloaderGuideStep1": "Uistite sa, že váš počítač má správne nainštalovaný ovládač DFU",
         "NandBootloaderGuideStep2": "Navštívte GitHub a stiahnite si bootloader podľa príslušného rádia",
         "NandBootloaderGuideStep3": "Pripojte rádio, keď je vypnuté",
-        "NandBootloaderGuideStep4": "Prejdite na DFU zapisovač, vyberte bootloader.frsk, ktorý ste si práve stiahli, a kliknite \"Zápis\""
+        "NandBootloaderGuideStep4": "Prejdite na DFU inštalátor, vyberte bootloader.frsk, ktorý ste si práve stiahli, a kliknite \"Zápis\""
     },
     "LanguageManager": {
         "LanguageManager": "Správca jazykov",
