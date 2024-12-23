@@ -102,8 +102,8 @@
         "UnselectAll": "Zrušiť všetko",
         "Refresh": "Obnoviť",
         "SystemFiles": "Systémové súbory",
-        "Dismiss": "Zamietnuté",
-        "ShowPrereleases": "Show pre-releases"
+        "Dismiss": "Zrušiť",
+        "ShowPrereleases": "Ukázať pre-releases"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Zvoľte verziu vašej zobrazovacej jednotky",
@@ -233,7 +233,7 @@
         "EjectDrives": "Vysunúť disky",
         "SwitchToEthos": "Prepnúť na Ethos",
         "SwitchToBootloader": "Prepnúť na Bootloader",
-        "WriteAllComponents": "Zápis všetkých zariadení",
+        "WriteAllComponents": "Aktualizácia všetkých zariadení",
         "WriteOutdated": "Aktualizácia zariadení",
         "WriteFirmware": "Aktualizácia firmvéru",
         "WriteFirmwareAndSystemFiles": "Aktualizácia firmwéru a systémových súborov",
