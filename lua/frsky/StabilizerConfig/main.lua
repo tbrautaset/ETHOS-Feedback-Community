@@ -6,6 +6,9 @@ local function name()
   return nameI18n[locale] or nameI18n["en"]
 end
 
+TEST = false
+GlobalPath = ""
+
 local REMOTE_VERSION_CONSTRAINT = function (major, minor, revision)
   if major > 3 then
     return true
@@ -22,7 +25,8 @@ local REMOTE_VERSION_CONSTRAINT = function (major, minor, revision)
   end
 end
 
-local CommonFile = assert(loadfile("common.lua"))()
+local CommonFile = assert(loadfile(GlobalPath .. "common.lua"))()
+Product = CommonFile.Product
 Module = CommonFile.Module
 Sensor = CommonFile.Sensor
 Dialog = CommonFile.Dialog
@@ -44,14 +48,14 @@ local supportFields = nil
 local createFunction = nil
 
 local REMOTE_DEVICE = {address = 0xFE, state = STATE_READ, field = nil, label = "Remote device", dataHandler = function (value, task)
-  local pFamily = (value >> 8) & 0xFF
-  local pId = (value >> 16) & 0xFF
-  print("Remote device family: " .. pFamily .. ", product: " .. pId)
-  local FrSkyProducts = assert(loadfile("products.lua"))()
+  Product.family = (value >> 8) & 0xFF
+  Product.id = (value >> 16) & 0xFF
+  print("Remote device family: " .. Product.family .. ", product: " .. Product.id)
+  local FrSkyProducts = assert(loadfile(GlobalPath .. "products.lua"))()
   for i, family in pairs(FrSkyProducts) do
-    if family.ID == pFamily then
+    if family.ID == Product.family then
       for j, product in pairs(family.Products) do
-        if product.ID == pId then
+        if product.ID == Product.id then
           supportFields = product.SupportFields
           if task.field ~= nil then
             task.field:value(product.Name)
@@ -93,22 +97,23 @@ local function clearAllTasks()
     end
   end
   supportFields = nil
+  Product.resetProduct()
 end
 
-local pages = {{file = assert(loadfile("basic/basic.lua")()), label = "Basic configure"},
+local pages = {{file = assert(loadfile(GlobalPath .. "basic/basic.lua")()), label = "Basic configure"},
                {
                  name = "Stabilizer group 1",
                  subPages = {
-                   {file = assert(loadfile("group1/precali1.lua")()), label = "Calibration"},
-                   {file = assert(loadfile("group1/stab1.lua")()), label = "Configuration"},}
+                   {file = assert(loadfile(GlobalPath .. "group1/precali1.lua")()), label = "Calibration"},
+                   {file = assert(loadfile(GlobalPath .. "group1/stab1.lua")()), label = "Configuration"},}
                  },
                {
                  name = "Stabilizer group 2",
                  subPages = {
-                   {file = assert(loadfile("group2/precali2.lua")()), label = "Calibration"},
-                   {file = assert(loadfile("group2/stab2.lua")()), label = "Configuration"},}
+                   {file = assert(loadfile(GlobalPath .. "group2/precali2.lua")()), label = "Calibration"},
+                   {file = assert(loadfile(GlobalPath .. "group2/stab2.lua")()), label = "Configuration"},}
                  },
-               {file = assert(loadfile("cali/cali.lua")()), label = "6-axis calibration"}}
+               {file = assert(loadfile(GlobalPath .. "cali/cali.lua")()), label = "6-axis calibration"}}
 
 local currentPage = nil
 
@@ -191,7 +196,16 @@ end
 
 local function checkNextTask()
   local allPass = true
+  if TEST then
+    supportFields = {1, 2, 3, 4}
+    Product.family = 2
+    Product.id = 79
+  end
+
   for i, task in pairs(tasks) do
+    if TEST then
+      task.state = STATE_PASS
+    end
     if task.state ~= STATE_PASS then
       allPass = false
     end
@@ -201,9 +215,6 @@ local function checkNextTask()
       return task
     end
   end
-
-  -- allPass = true
-  -- supportFields = {1, 2, 3, 4}
 
   if allPass and supportFields ~= nil then
     buildpage()
@@ -220,6 +231,9 @@ local function taskInit()
 end
 
 createFunction = function ()
+  if TEST then
+    print("Test mode enabled")
+  end
   taskInit()
 
   form.clear()
@@ -238,6 +252,9 @@ createFunction = function ()
     taskInit()
   end)
 
+  if TEST then
+    buildpage()
+  end
   return {}
 end
 
@@ -321,7 +338,7 @@ local icon = lcd.loadBitmap("sc.png");
 
 local function init()
   if system.registerDeviceConfig then
-    system.registerDeviceConfig({category = DEVICE_CATEGORY_RECEIVERS, name = name, bitmap = icon, appIdStart = 0x0C30, appIdEnd = 0x0C30, version = LUA_VERSION, pages = { {name = name, create = createFunction, wakeup = wakeup, paint = paint, event = event, close = close} }})
+    system.registerDeviceConfig({category = DEVICE_CATEGORY_RECEIVERS, name = name, bitmap = icon, appIdStart = Sensor.APPID, appIdEnd = Sensor.APPID, version = LUA_VERSION, pages = { {name = name, create = createFunction, wakeup = wakeup, paint = paint, event = event, close = close} }})
   else
     system.registerSystemTool({name = name, icon = icon, create = createFunction, wakeup = wakeup, paint = paint, event = event, close = close})
   end

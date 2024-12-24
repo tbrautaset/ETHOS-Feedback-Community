@@ -24,6 +24,14 @@ local CALI_LABELS = {
   "Calibration finished. You can exit this page now"
 }
 
+local function getCaliBitmapPath()
+  if Product.family and Product.family == 2 and Product.id and (Product.id == 79 or Product.id == 80) then
+    return GlobalPath .. "cali/cali_sr6_" .. step .. ".png"
+  else
+    return GlobalPath .. "cali/cali_" .. step .. ".png"
+  end
+end
+
 local function doCalibrate()
   local button = {{label = "Close", action = function ()
     Dialog.closeDialog()
@@ -79,7 +87,7 @@ local function pageInit()
   local line = form.addLine("", nil, false)
   caliButton = form.addTextButton(line, nil, "Calibrate", function() doCalibrate() end)
 
-  bitmap = lcd.loadBitmap("cali/cali_"..step..".png")
+  bitmap = lcd.loadBitmap(getCaliBitmapPath())
 end
 
 local function paint()
@@ -104,10 +112,10 @@ end
 local function wakeup()
   if nextStep then
     if step < 6 then
-      bitmap = lcd.loadBitmap("cali/cali_"..step..".png")
+      bitmap = lcd.loadBitmap(getCaliBitmapPath())
       Dialog.closeDialog()
     else
-      bitmap = lcd.loadBitmap("cali/cali_ok.png")
+      bitmap = lcd.loadBitmap(GlobalPath .. "cali/cali_ok.png")
       Dialog.message("Calibration finished!")
     end
     nextStep = false

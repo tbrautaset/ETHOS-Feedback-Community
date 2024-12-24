@@ -1,3 +1,9 @@
+local Product = {}
+Product.resetProduct = function ()
+  Product.family = nil
+  Product.id = nil
+end
+
 local Module = {}
 Module.INTERNAL_MODULE = 0x00
 Module.EXTERNAL_MODULE = 0x01
@@ -80,4 +86,4 @@ Progress.closeAllowed = function (newValue)
   end
 end
 
-return {Module = Module, Sensor = Sensor, Dialog = Dialog, Progress = Progress}
+return {Product = Product, Module = Module, Sensor = Sensor, Dialog = Dialog, Progress = Progress}
