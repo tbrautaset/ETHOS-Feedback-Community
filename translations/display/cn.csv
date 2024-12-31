@@ -784,7 +784,7 @@ MIX_WEIGHTDOWN_DESCRIPTION,"用于设置混控在生效时,输入叠加到通\n�
 MIX_SPEEDUP_DESCRIPTION,"用于设置混控在输入在正向变化时,达\n到目标值的延迟时间","用于设置混控在输入在正向变\n化时,达到目标值的延迟时间"
 MIX_SPEEDDOWN_DESCRIPTION,"用于设置混控在输入在负向变化时,达\n到目标值的延迟时间","用于设置混控在输入在负向变\n化时,达到目标值的延迟时间"
 MIX_LOWPOSTRIM_DESCRIPTION,"用于设置低位微调"
-HELI_PITCH,"浆距"
+HELI_PITCH,"桨距"
 EDITABLE_HELI_PITCH,"Pitch"
 HELI_GYRO,"陀螺仪"
 EDITABLE_HELI_GYRO,"Gyro"
