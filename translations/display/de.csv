@@ -1120,3 +1120,6 @@ CONFIRM_TO_SHARE_RECEIVER,"Sicher, dass Sie diesen Empfänger gemeinsam nutzen w
 CONFIRM_TO_UNBIND_RECEIVER,"Sicher, dass Sie die Bindung dieses Empfängers löschen wollen?"
 CONFIRM_FRSK_NOT_COMPATIBLE,"Diese FRSK-Datei ist mit Ihrem Gerät nicht kompatibel.\nSicher, dass Sie fortfahren möchten?"
 RX_VFR,"Rx VFR"
+EDITABLE_SRV_DDD_VELO,"SRV%d vel"
+EDITABLE_SRV_DDD_STATE,"SRV%d state"
+EDITABLE_SRV_DDD_POS,"SRV%d pos"
