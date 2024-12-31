@@ -988,7 +988,7 @@ MODELS,"Modelli",
 USER_BITMAPS,"Immagini Utente",
 SCRIPTS,"Scripts",
 LOGS,"Logs",
-SCREENSHOTS,"Catturaschemo",
+SCREENSHOTS,"CatturaSchermo",
 PRESSURE,"Pressione",
 COLOR,"Colore",
 CONFIRM_CLEAR_CHANNELS_SSS_NAME,"Non ci sono mixers che usano il canale %s. Vuoi eliminare il nome di questi canali?",
@@ -1094,7 +1094,7 @@ RIGHT_STICK,"Stick Dx",
 ALL_MOTORS,"Tutti i motori",
 SELECT,"Seleziona",
 SINGLE_MOTOR,"Motore Singolo",
-STICK_MOTORS,"Stick motori",
+STICK_MOTORS,"Motori Stick",
 CONFIRM_DELETE_ACTION,"Sei Sicuro di voler rimuovere questa azione?",
 CONFIRM_DELETE_SCREEN,"Sei Sicuro di voler rimuovere questa schermata?",
 CONFIRM_DELETE_SENSOR,"Sei Sicuro di voler rimuovere questo sensore?",
@@ -1120,5 +1120,5 @@ CONFIRM_TO_UNBIND_RECEIVER,"Sei Sicuro di voler scollegare questa ricevente?",
 CONFIRM_FRSK_NOT_COMPATIBLE,"Questo file FRSK non è compatibile con il vostro dispositivo.\nSei sicuro di voler continuare?"
 RX_VFR,"Rx VFR"
 EDITABLE_SRV_DDD_VELO,"SRV%d vel"
-EDITABLE_SRV_DDD_STATE,"SRV%d state"
+EDITABLE_SRV_DDD_STATE,"SRV%d stato"
 EDITABLE_SRV_DDD_POS,"SRV%d pos"
