@@ -1,9 +1,9 @@
 local FrSkyProducts = {
   -- {
   --   ID = 0,
-  --   Name = "Test P. family",
+  --   Name = "Test family (Rx)",
   --   Products = {
-  --     {ID = 0, Name = "Test Rx", SupportFields = {2, 3, 4, 5}}
+  --     {ID = 0, Name = "Test Device", SupportFields = {1, 2, 3, 4, 5}}
   --   }
   -- },
   {
@@ -23,7 +23,14 @@ local FrSkyProducts = {
       {ID = 79, Name = "SR6 Mini", SupportFields = {2, 3, 4}},
       {ID = 80, Name = "SR6 Mini E", SupportFields = {2, 3, 4}},
     }
-  }
+  },
+  -- {
+  --   ID = 3,
+  --   Name = "Test family (Sensor)",
+  --   Products = {
+  --     {ID = 0, Name = "Test Device", SupportFields = {1, 2, 3, 4, 5}}
+  --   }
+  -- },
 }
 
 return FrSkyProducts

@@ -1119,3 +1119,6 @@ CONFIRM_TO_SHARE_RECEIVER,"Partager ce récepteur ?",
 CONFIRM_TO_UNBIND_RECEIVER,"Réinitialiser l'appairage du récepteur ?",
 CONFIRM_FRSK_NOT_COMPATIBLE,"Fichier non compatible. Continuer ?",
 RX_VFR,"Rx VFR",
+EDITABLE_SRV_DDD_VELO,"SRV%d vel"
+EDITABLE_SRV_DDD_STATE,"SRV%d state"
+EDITABLE_SRV_DDD_POS,"SRV%d pos"
