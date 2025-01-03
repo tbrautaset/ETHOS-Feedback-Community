@@ -39,7 +39,7 @@ Here are some direct links to the main pages:
 * [Italian Manual](https://github.com/FrSkyRC/ETHOS-Feedback-Community/raw/1.5/doc/%5BIT%5D%20%20Ethos%20User%20Manual%201.5.18.pdf)
 * [Brazilian Portuguese Manual](https://github.com/FrSkyRC/ETHOS-Feedback-Community/raw/1.5/doc/%5BPB%5D%20Ethos%20User%20Manual%201.0.x.pdf)
 * [Spanish Manual](https://github.com/FrSkyRC/ETHOS-Feedback-Community/raw/1.6/doc/%5BES%5D%20Ethos%20User%20Manual%201.6.0.pdf)
-* [German Manual](https://github.com/FrSkyRC/ETHOS-Feedback-Community/raw/1.5/doc/%5BDE%5D%20Ethos%20User%20Manual%201.6.0pdf)
+* [German Manual](https://github.com/FrSkyRC/ETHOS-Feedback-Community/raw/1.6/doc/%5BDE%5D%20Ethos%20User%20Manual%201.6.0pdf)
 
 If there are any mistakes, please feel free to tell us!
 
