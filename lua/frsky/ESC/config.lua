@@ -251,7 +251,7 @@ function Wakeup(data)
   if requestInProgress then
     local receivedValue = data.sensor:getParameter()
     if receivedValue ~= nil then
-      print("data.sensor:getParameter(): ", receivedValue)
+      print("data.sensor:getParameter(): ", string.format("%X", receivedValue))
       local pageAddress = receivedValue & 0xFF
       local value = receivedValue >> 8
       for index, parameter in pairs(Params) do
@@ -271,14 +271,14 @@ function Wakeup(data)
     for index, parameter in pairs(Params) do
       if parameter.state == FieldState.IDLE then
         if data.sensor:requestParameter(parameter.pageAddress) then
-          print("data.sensor:requestParameter(" .. parameter.pageAddress .. ")")
+          print("data.sensor:requestParameter(" .. string.format("%X", parameter.pageAddress) .. ")")
           requestInProgress = true
           lastRquestTime = os.time()
           return
         end
       elseif parameter.state == FieldState.DIRTY then
         if data.sensor:writeParameter(parameter.pageAddress, parameter.value) then
-          print("data.sensor:writeParameter(" .. parameter.pageAddress .. "): " .. parameter.value)
+          print("data.sensor:writeParameter(" .. string.format("%X", parameter.pageAddress) .. "): " .. string.format("%X", parameter.value))
           if parameter.isAppId ~= nil and parameter.isAppId then
             local oldAppId = data.sensor:appId()
             data.sensor:appId(oldAppId & 0xFFF0 | parameter.value)

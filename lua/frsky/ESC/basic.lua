@@ -10,8 +10,18 @@ local parameters = {
   { fieldFunction = CreateNumberField, fieldName = "Soft brake", pageAddress = 0x86, extraInfo = {min = 0, max = 100, suffix = "%"}},
   { fieldFunction = CreateChoiceField, fieldName = "3D Mode(Effective after restart)", pageAddress = 0x87, extraInfo = {valuePairs = {{"OFF", 0}, {"ON", 1}}} },
   { fieldFunction = CreateNumberField, fieldName = "Current calibration", pageAddress = 0x88, defaultValue = 100, extraInfo = {min = 75, max = 125, suffix = "%"}},
-  { fieldFunction = CreateNumberField, fieldName = "Current limit", pageAddress = 0x89, defaultValue = 40, extraInfo = {min = 0, max = 655, suffix = "A"}},
-  { fieldFunction = CreateNumberField, fieldName = "BEC voltage", pageAddress = 0x8A, defaultValue = 50, extraInfo = {min = 50, max = 54, suffix = "V", prec = 1}},
+  { fieldFunction = CreateNumberField, fieldName = "Current limit", pageAddress = 0x89, defaultValue = 40, getValue = function (value)
+    return value / 100
+  end, setValue = function(param, newValue)
+    param.value = newValue * 100
+    param.state = FieldState.DIRTY
+  end, extraInfo = {min = 0, max = 655, suffix = "A"}},
+  { fieldFunction = CreateNumberField, fieldName = "BEC voltage", pageAddress = 0x8A, defaultValue = 50, getValue = function (value)
+    return value / 10
+  end, setValue = function(param, newValue)
+    param.value = newValue * 10
+    param.state = FieldState.DIRTY
+  end, extraInfo = {min = 50, max = 84, suffix = "V", prec = 1}},
   { fieldFunction = CreateChoiceField, fieldName = "Trapezoidal mode", pageAddress = 0x8B, extraInfo = {valuePairs = {{"OFF", 0}, {"ON", 1}}} },
   { fieldFunction = CreatePhyIdField, fieldName = "Physical Id", pageAddress = 0x8C, defaultValue = 10, extraInfo = {} },
   { fieldFunction = CreateAppIdField, fieldName = "Application Id", pageAddress = 0x8D, extraInfo = {} },
