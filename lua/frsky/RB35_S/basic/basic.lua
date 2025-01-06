@@ -74,9 +74,11 @@ local function createFailsafeField(line, parameter)
   local button1 = form.addTextButton(line, rect[1], "Hold", function()
     local value = 1 * 256
     modifications[#modifications+1] = {parameter[3], value}
-    for index = 1, #fields do
-      if fields[index] then
-        fields[index]:enable(false)
+    for i = 1, #fields do
+      for j = 1, #fields[i] do
+        if fields[i][j] then
+          fields[i][j]:enable(false)
+        end
       end
     end
   end);
@@ -85,9 +87,11 @@ local function createFailsafeField(line, parameter)
   local button2 = form.addTextButton(line, rect[2], "Record current value", function()
     local value = 1
     modifications[#modifications+1] = {parameter[3], value}
-    for index = 1, #fields do
-      if fields[index] then
-        fields[index]:enable(false)
+    for i = 1, #fields do
+      for j = 1, #fields[i] do
+        if fields[i][j] then
+          fields[i][j]:enable(false)
+        end
       end
     end
   end);
@@ -102,9 +106,11 @@ local function createFailsafeField(line, parameter)
   end, function(value)
     value = value * 256
     modifications[#modifications+1] = {parameter[3], value}
-    for index = 1, #fields do
-      if fields[index] then
-        fields[index]:enable(false)
+    for i = 1, #fields do
+      for j = 1, #fields[i] do
+        if fields[i][j] then
+          fields[i][j]:enable(false)
+        end
       end
     end
   end)
@@ -114,7 +120,7 @@ local function createFailsafeField(line, parameter)
       if value == 1 then
         return "Hold"
       elseif value == 0 then
-        return "Recorded value"
+        return "Rec. value"
       else
         return value
       end
