@@ -1132,5 +1132,3 @@ BIND_CARD,"Karte binden"
 WAITING_FOR_NFC_CARD,"Bitte halten Sie die NFC-Karte zum Binden nahe an die NFC-Fernbedienung. ..."
 BIND_CARD_SUCCESS,"NFC-Karte erfolgreich gebunden!"
 BIND_CARD_FAIL,"NFC-Karte wurde nicht gebunden!"
-
-
