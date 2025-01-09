@@ -692,7 +692,6 @@ R9M_POWER,"Puissance R9M",
 EDITABLE_SRV_DDD_CURR,"Intensité SRV%d",
 EDITABLE_SRV_DDD_VOLT,"Tension SRV%d",
 EDITABLE_SRV_DDD_TEMP,"Temp. SRV%d",
-EDITABLE_SRV_DDD_STATUS,"Etat SRV%d",
 RX_BATT,"Tension RX",
 RX_CURRENT,"Intensité RX",
 ALTITUDE,"Altitude",
@@ -1119,9 +1118,6 @@ CONFIRM_TO_SHARE_RECEIVER,"Partager ce récepteur ?",
 CONFIRM_TO_UNBIND_RECEIVER,"Réinitialiser l'appairage du récepteur ?",
 CONFIRM_FRSK_NOT_COMPATIBLE,"Fichier non compatible. Continuer ?",
 RX_VFR,"Rx VFR",
-EDITABLE_SRV_DDD_VELO,"SRV%d vel"
-EDITABLE_SRV_DDD_STATE,"SRV%d state"
-EDITABLE_SRV_DDD_POS,"SRV%d pos"
 SMOKE_PUMP_VOLTAGE,"S.P voltage"
 SMOKE_PUMP_CURRENT,"S.P current"
 SMOKE_PUMP_TEMPERATURE,"S.P temp"

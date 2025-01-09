@@ -924,7 +924,6 @@ STALL,"Stall",
 EDITABLE_SRV_DDD_CURR,"SRV%d curr",
 EDITABLE_SRV_DDD_VOLT,"SRV%d volt",
 EDITABLE_SRV_DDD_TEMP,"SRV%d temp",
-EDITABLE_SRV_DDD_STATUS,"SRV%d status",
 CONDITION,"Condition",
 TIMER_LOGS,"Timer Logs",
 SAVE_TO_SD,"Save to SD",
@@ -1119,9 +1118,6 @@ CONFIRM_TO_SHARE_RECEIVER,"Are you sure you want to share this receiver?"
 CONFIRM_TO_UNBIND_RECEIVER,"Are you sure you want to unbind this receiver?"
 CONFIRM_FRSK_NOT_COMPATIBLE,"This FRSK file is not compatible with your device.\nAre you sure you want to continue?"
 RX_VFR,"Rx VFR"
-EDITABLE_SRV_DDD_VELO,"SRV%d vel"
-EDITABLE_SRV_DDD_STATE,"SRV%d state"
-EDITABLE_SRV_DDD_POS,"SRV%d pos"
 SMOKE_PUMP_VOLTAGE,"S.P voltage"
 SMOKE_PUMP_CURRENT,"S.P current"
 SMOKE_PUMP_TEMPERATURE,"S.P temp"
