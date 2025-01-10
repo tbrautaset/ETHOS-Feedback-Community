@@ -99,7 +99,7 @@
         "Refresh": "Refrescar",
         "SystemFiles": "Archivos de sistema",
         "Dismiss": "Descartar",
-        "ShowPrereleases": "Show pre-releases"
+        "ShowPrereleases": "Mostrar pre-releases"
     },
     "ChooseVideoVersion": {
         "ChooseYourVideoComponentVersion": "Elija su versión de video componente",
@@ -220,7 +220,7 @@
         "Flash": "Flash ({{ size }}):",
         "UpdateSD": "Actualiza la tarjeta SD",
         "UpdateFlash": "Actualiza la memoria Flash",
-        "SelectRelease": "Lanzar la selección",
+        "SelectRelease": "Seleccionar release",
         "LocalFile": "Archivo local",
         "SelectLocalFirmware": "Seleccione un firmware",
         "AudioLanguages": "Idioma de audio",
