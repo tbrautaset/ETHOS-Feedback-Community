@@ -145,7 +145,7 @@ BIND_OK,"Bind OK",
 BINDING_3DOTS,"Binding ...",
 BIND,"Bind",
 FAILSAFE,"Failsafe",
-INTERNAL_MODULE,"Internal module",
+INTERNAL_MODULE,"Internal module","Int. module"
 SET_FAILSAFE,"Set failsafe",
 RESET_BIND,"Reset bind",
 FACTORY_RESET,"Factory reset",
