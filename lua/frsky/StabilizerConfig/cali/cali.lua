@@ -29,12 +29,12 @@ local SR6_CALI_LABELS = {
 }
 
 local CALI_LABELS = {
-  "Place your Stabilizer Rx horizontal, top side up.",
-  "Place your Stabilizer Rx horizontal, top side down.",
-  "Place your Stabilizer Rx vertical, pins up.",
-  "Place your Stabilizer Rx vertical, pins down.",
-  "Place your Stabilizer Rx with label facing you, pins right.",
-  "Place your Stabilizer Rx with label facing you, pins left.",
+  "Place your Stabilizer Rx horizontal with the front facing up.",
+  "Place your Stabilizer Rx horizontal with the back facing up.",
+  "Place your Stabilizer Rx vertical with the label tilted to the left.",
+  "Place your Stabilizer Rx vertical with the label tilted to the right.",
+  "Place your Stabilizer Rx vertical with the label displayed upright.",
+  "Place your Stabilizer Rx vertical with the label displayed upside down.",
   "Calibration finished. You can exit this page now"
 }
 
