@@ -79,7 +79,7 @@ local function parseValue(data, offset, size)
   for i = 0, size - 1 do 
     result = (result << 8) + data[offset + i] 
   end
-  return result
+  return result, offset + size
 end
 
 local function setCurrentDevice(device)
@@ -137,6 +137,125 @@ local function parseChoiceValues(data, offset)
   return values, offset + 1, collectgarbage("collect")
 end
 
+-- UINT8 (0) / UINT16 (2)
+local function addUnsignedLine(field, name, fieldData, offset, size)
+  local min, max, default, unit
+  field.value, offset = parseValue(fieldData, offset, size)
+  min, offset = parseValue(fieldData, offset, size)
+  max, offset = parseValue(fieldData, offset, size)
+  default, offset = parseValue(fieldData, offset, size)
+  unit = parseString(fieldData, offset)
+  if field.widget == nil then
+    local line = form.addLine(name, currentExpansionPanel)
+    field.widget = form.addNumberField(line, nil, min, max, 
+      function()
+        return field.value
+      end, 
+      function(value)
+        field.value = value
+        local frame = {deviceId, handsetId, field.id}
+        for i = 1, size do
+          table.insert(frame, 4, value & 0xFF)
+          value = value >> 8
+        end
+        pushFrame(0x2D, frame)
+      end)
+  end
+end
+
+-- Select (9)
+local function addChoiceLine(field, name, fieldData, offset)
+  local values
+  values, offset = parseChoiceValues(fieldData, offset)
+  field.value = fieldData[offset]
+  -- local unit = parseString(fieldData, offset + 4)
+  if field.widget == nil then
+    local line = form.addLine(name, currentExpansionPanel)
+    field.widget = form.addChoiceField(line, nil, values, 
+      function()
+        return field.value
+      end, 
+      function(value)
+        field.value = value
+        pushFrame(0x2D, {deviceId, handsetId, field.id, value})
+      end)
+  end
+end
+
+-- Folder (11)
+local function addFolderLine(field, name, fieldData, offset)
+  currentExpansionPanel = form.addExpansionPanel(name)
+  currentParent = field
+end
+
+-- Info (12)
+local function addInfoLine(field, name, fieldData, offset)
+  field.value, offset = parseString(fieldData, offset)
+  if field.widget == nil then
+    local line = form.addLine(name, currentExpansionPanel)
+    field.widget = form.addStaticText(line, nil, field.value)
+  end
+end
+
+-- Command (13)
+local function addCommandLine(field, name, fieldData, offset)
+  field.status = fieldData[offset]
+  field.timeout = fieldData[offset + 1]
+  field.info = parseString(fieldData, offset + 2)
+  -- print("Status: " .. field.status .. ", Info: " .. field.info)
+  if field.dialog then
+    if field.status == 0 then
+      field.dialog:close()
+      -- field.dialog = nil
+    else
+      if field.status == 3 then
+        field.dialog:buttons({
+          {
+            label = "OK",
+            action = function()
+              pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
+              fieldTimeout = os.time() + field.timeout / 100 -- we are expecting an immediate response
+              field.status = 4
+            end
+          }, 
+          {label = "Cancel"}
+        })
+      else
+        field.dialog:buttons({
+          {
+            label = "Cancel",
+            action = function()
+              pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              fieldPopup = nil
+              return true
+            end
+          }
+        })
+      end
+      field.dialog:message(field.info)
+    end
+  elseif field.widget == nil then
+    local line = form.addLine("", currentExpansionPanel)
+    field.widget = form.addTextButton(line, nil, name, function()
+      if field.status < 4 then
+        field.status = 1
+        pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
+        fieldPopup = field
+        field.dialog = form.openDialog(name, field.info, {
+          {
+            label = "Cancel",
+            action = function()
+              pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              fieldPopup = nil
+              return true
+            end
+          }
+        })
+      end
+    end)
+  end
+end
+
 local function parseParameterInfoMessage(data)
   local fieldId = (fieldPopup and fieldPopup.id) or loadQ[#loadQ]
   if data[2] ~= deviceId or data[3] ~= fieldId then
@@ -155,101 +274,36 @@ local function parseParameterInfoMessage(data)
   else
     loadQ[#loadQ] = nil
     if #fieldData > 3 then
-      local offset
+      local offset, type, name, hidden
       field.id = fieldId
       field.parent = fieldData[1]
-      field.type = fieldData[2] & 0x7f
-      field.hidden = fieldData[2] & 0x80
-      field.name, offset = parseString(fieldData, 3, field.name)
-      -- print("Field: " .. field.name .. ", Type: " .. field.type)
+      type = fieldData[2] & 0x7F
+      hidden = fieldData[2] & 0x80
 
-      if currentParent ~= nil and field.parent ~= currentParent.id then
-        currentExpansionPanel = nil
-        currentParent = nil
-      end
+      if hidden == 0 then
+        name, offset = parseString(fieldData, 3)
+        -- print("Field: " .. name .. ", Type: " .. type)
 
-      if field.type == 9 then
-        field.values, offset = parseChoiceValues(fieldData, offset)
-        field.value = fieldData[offset]
-        field.unit = parseString(fieldData, offset + 4)
-        if field.widget == nil then
-          local line = form.addLine(field.name, currentExpansionPanel)
-          field.widget = form.addChoiceField(line, nil, field.values, 
-            function()
-              return field.value
-            end, 
-            function(value)
-              field.value = value
-              pushFrame(0x2D, {deviceId, handsetId, field.id, value})
-            end)
+        if currentParent ~= nil and field.parent ~= currentParent.id then
+          currentExpansionPanel = nil
+          currentParent = nil
         end
-      elseif field.type == 13 then
-        field.status = fieldData[offset]
-        field.timeout = fieldData[offset + 1]
-        field.info = parseString(fieldData, offset + 2)
-        -- print("Status: " .. field.status .. ", Info: " .. field.info)
-        if field.dialog then
-          if field.status == 0 then
-            field.dialog:close()
-            -- field.dialog = nil
-          else
-            if field.status == 3 then
-              field.dialog:buttons({
-                {
-                  label = "OK",
-                  action = function()
-                    pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
-                    fieldTimeout = os.time() + field.timeout / 100 -- we are expecting an immediate response
-                    field.status = 4
-                  end
-                }, 
-                {label = "Cancel"}
-              })
-            else
-              field.dialog:buttons({
-                {
-                  label = "Cancel",
-                  action = function()
-                    pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
-                    fieldPopup = nil
-                    return true
-                  end
-                }
-              })
-            end
-            field.dialog:message(field.info)
-          end
-        elseif field.widget == nil then
-          local line = form.addLine("", currentExpansionPanel)
-          field.widget = form.addTextButton(line, nil, field.name, function()
-            if field.status < 4 then
-              field.status = 1
-              pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
-              fieldPopup = field
-              field.dialog = form.openDialog(field.name, field.info, {
-                {
-                  label = "Cancel",
-                  action = function()
-                    pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
-                    fieldPopup = nil
-                    return true
-                  end
-                }
-              })
-            end
-          end)
+
+        if type == 0 then
+          addUnsignedLine(field, name, fieldData, offset, 1)
+        elseif type == 2 then
+          addUnsignedLine(field, name, fieldData, offset, 2)
+        elseif type == 9 then
+          addChoiceLine(field, name, fieldData, offset)
+        elseif type == 11 then
+          addFolderLine(field, name, fieldData, offset)
+        elseif type == 12 then
+          addInfoLine(field, name, fieldData, offset)
+        elseif type == 13 then
+          addCommandLine(field, name, fieldData, offset)
+        else
+          print("Field '" .. name .. "' type=" .. type .. " not supported")
         end
-      elseif field.type == 12 then
-        field.value, offset = parseString(fieldData, offset)
-        if field.widget == nil and field.hidden == 0 then
-          local line = form.addLine(field.name, currentExpansionPanel)
-          field.widget = form.addStaticText(line, nil, field.value)
-        end
-      elseif field.type == 11 then
-        currentExpansionPanel = form.addExpansionPanel(field.name)
-        currentParent = field
-      else
-        -- print("Not implemented!")
       end
     end
 
