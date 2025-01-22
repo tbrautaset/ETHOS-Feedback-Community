@@ -1,10 +1,4 @@
 local LUA_VERSION = "3.0.3";
-local nameI18n = {en = "Stabilizer config"}
-
-local function name()
-  local locale = system.getLocale()
-  return nameI18n[locale] or nameI18n["en"]
-end
 
 TEST = false
 GlobalPath = ""
@@ -32,6 +26,12 @@ Sensor = CommonFile.Sensor
 Dialog = CommonFile.Dialog
 Progress = CommonFile.Progress
 
+STR = assert(loadfile(GlobalPath .. "i18n.lua"))().translate
+
+local function name()
+  return STR("ScriptName")
+end
+
 -- Data related
 local STATE_READ = 1
 local STATE_RECEIVE = 2
@@ -47,7 +47,7 @@ local supportFields = nil
 
 local createFunction = nil
 
-local REMOTE_DEVICE = {address = 0xFE, state = STATE_READ, field = nil, label = "Remote device", dataHandler = function (value, task)
+local REMOTE_DEVICE = {address = 0xFE, state = STATE_READ, field = nil, label = STR("RemoteDevice"), dataHandler = function (value, task)
   Product.family = (value >> 8) & 0xFF
   Product.id = (value >> 16) & 0xFF
   print("Remote device family: " .. Product.family .. ", product: " .. Product.id)
@@ -67,10 +67,10 @@ local REMOTE_DEVICE = {address = 0xFE, state = STATE_READ, field = nil, label = 
     end
   end
   if task.field ~= nil then
-    task.field:value("Unsupport device")
+    task.field:value(STR("UnsupportDevice"))
   end
 end}
-local REMOTE_VERSION = {address = 0xFF, state = STATE_READ, field = nil, label = "Remote version", dataHandler = function (value, task)
+local REMOTE_VERSION = {address = 0xFF, state = STATE_READ, field = nil, label = STR("RemoteVersion"), dataHandler = function (value, task)
   local major = (value >> 8) & 0xFF
   local minor = (value >> 16) & 0xFF
   local revision = (value >> 24) & 0xFF
@@ -83,7 +83,7 @@ local REMOTE_VERSION = {address = 0xFF, state = STATE_READ, field = nil, label =
     end
   else
     if task.field ~= nil then
-      task.field:value("Uncompitable version")
+      task.field:value(STR("UncompitableVersion"))
     end
   end
 end}
@@ -93,27 +93,27 @@ local function clearAllTasks()
   for i, task in pairs(tasks) do
     task.state = STATE_READ
     if task.field ~= nil then
-      task.field:value("Reading ...")
+      task.field:value(STR("Reading"))
     end
   end
   supportFields = nil
   Product.resetProduct()
 end
 
-local pages = {{file = assert(loadfile(GlobalPath .. "basic/basic.lua")()), label = "Basic configure"},
+local pages = {{file = assert(loadfile(GlobalPath .. "basic/basic.lua")()), label = STR("BasicConfig")},
                {
-                 name = "Stabilizer group 1",
+                 name = STR("StabilizerGroup1"),
                  subPages = {
-                   {file = assert(loadfile(GlobalPath .. "group1/precali1.lua")()), label = "Calibration"},
-                   {file = assert(loadfile(GlobalPath .. "group1/stab1.lua")()), label = "Configuration"},}
+                   {file = assert(loadfile(GlobalPath .. "group1/precali1.lua")()), label = STR("Calibration")},
+                   {file = assert(loadfile(GlobalPath .. "group1/stab1.lua")()), label = STR("Configuration")},}
                  },
                {
-                 name = "Stabilizer group 2",
+                 name = STR("StabilizerGroup2"),
                  subPages = {
-                   {file = assert(loadfile(GlobalPath .. "group2/precali2.lua")()), label = "Calibration"},
-                   {file = assert(loadfile(GlobalPath .. "group2/stab2.lua")()), label = "Configuration"},}
+                   {file = assert(loadfile(GlobalPath .. "group2/precali2.lua")()), label = STR("Calibration")},
+                   {file = assert(loadfile(GlobalPath .. "group2/stab2.lua")()), label = STR("Configuration")},}
                  },
-               {file = assert(loadfile(GlobalPath .. "cali/cali.lua")()), label = "6-axis calibration"}}
+               {file = assert(loadfile(GlobalPath .. "cali/cali.lua")()), label = STR("SixAxisCali")}}
 
 local currentPage = nil
 
@@ -141,7 +141,7 @@ local function buildpage()
               form.clear()
               local backLine = form.addLine(page.name .. " " .. subPage.label)
               local rect = form.getFieldSlots(backLine, {nil})
-              form.addTextButton(backLine, rect[1], "Back", function ()
+              form.addTextButton(backLine, rect[1], STR("Back"), function ()
                 if currentPage ~= nil then
                   if getPage(currentPage).close ~= nil then
                     getPage(currentPage).close()
@@ -163,11 +163,11 @@ local function buildpage()
 
         else
           local line = form.addLine(page.label)
-          form.addTextButton(line, nil, "Open", function()
+          form.addTextButton(line, nil, STR("Open"), function()
             form.clear()
             local backLine = form.addLine(page.label)
             local rect = form.getFieldSlots(backLine, {nil})
-            form.addTextButton(backLine, rect[1], "Back", function ()
+            form.addTextButton(backLine, rect[1], STR("Back"), function ()
               if currentPage ~= nil then
                 if getPage(currentPage).close ~= nil then
                   getPage(currentPage).close()
@@ -238,16 +238,16 @@ createFunction = function ()
 
   form.clear()
 
-  local line = form.addLine("Script version")
+  local line = form.addLine(STR("ScriptVersion"))
   form.addStaticText(line, nil, LUA_VERSION)
 
   for i, task in pairs(tasks) do
     line = form.addLine(task.label)
-    task.field = form.addStaticText(line, nil, "Reading ...")
+    task.field = form.addStaticText(line, nil, STR("Reading"))
   end
 
-  line = form.addLine("Module")
-  form.addChoiceField(line, nil, {{"Internal", Module.INTERNAL_MODULE}, {"External", Module.EXTERNAL_MODULE}}, function() return Module.CurrentModule end, function(value)
+  line = form.addLine(STR("Module"))
+  form.addChoiceField(line, nil, {{STR("Internal"), Module.INTERNAL_MODULE}, {STR("External"), Module.EXTERNAL_MODULE}}, function() return Module.CurrentModule end, function(value)
     Sensor.setModule(value)
     taskInit()
   end)
@@ -295,7 +295,7 @@ local function wakeup()
       print("Retries reached")
       currentTask.state = STATE_FINISHED
       if currentTask.field ~= nil then
-        currentTask.field:value("Unable to read")
+        currentTask.field:value(STR("UnableToRead"))
       end
       currentTask = checkNextTask()
     end
