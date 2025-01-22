@@ -5,6 +5,13 @@ local CALIBRATION_READ = 2
 local CALIBRATION_WAIT = 3
 local CALIBRATION_OK = 4
 
+local GYRO_MODE_CHECK_REQUEST = 0
+local GYRO_MODE_CHECK_RESPONSE = 1
+local GYRO_MODE_CHECK_PASS = 2
+local GYRO_MODE_CHECK_REJECT = 3
+local gyroModeCheck = GYRO_MODE_CHECK_REQUEST
+local GYRO_MODE_CHECK_DETAIL = {address = 0xA4, passFunction = function(value4Bytes) return ((value4Bytes >> 8) & 0xFF) > 0  end}
+
 local step = 0
 local bitmap
 local nextStep = false
@@ -47,7 +54,11 @@ local function getCaliBitmapPath()
 end
 
 local function getCaliLabel()
-  if isSR6Mini() then
+  if gyroModeCheck <= GYRO_MODE_CHECK_RESPONSE then
+    return "Checking gyro mode ..."
+  elseif gyroModeCheck == GYRO_MODE_CHECK_REJECT then
+    return "Gyro mode not enable!"
+  elseif isSR6Mini() then
     return SR6_CALI_LABELS[step + 1]
   else
     return CALI_LABELS[step + 1]
@@ -105,9 +116,11 @@ end
 local function pageInit()
   step = 0
   calibrationState = CALIBRATION_INIT
+  gyroModeCheck = GYRO_MODE_CHECK_REQUEST
 
   local line = form.addLine("", nil, false)
   caliButton = form.addTextButton(line, nil, "Calibrate", function() doCalibrate() end)
+  caliButton:enable(false)
 
   bitmap = lcd.loadBitmap(getCaliBitmapPath())
 end
@@ -118,7 +131,7 @@ local function paint()
   lcd.color(lcd.GREY(0xFF))
   local tw, th = lcd.getTextSize(getCaliLabel())
   lcd.drawText(width / 2, height / 3, getCaliLabel(), CENTERED)
-  if step < 6 or calibrationState ~= CALIBRATION_OK then
+  if gyroModeCheck == GYRO_MODE_CHECK_PASS and (step < 6 or calibrationState ~= CALIBRATION_OK) then
     lcd.drawText(width / 2, height / 3 + th, "Press \"Calibrate\" button to start", CENTERED)
   end
 
@@ -132,7 +145,27 @@ local function paint()
 end
 
 local function wakeup()
-  if nextStep then
+  if gyroModeCheck == GYRO_MODE_CHECK_REQUEST then
+    if Sensor.requestParameter(GYRO_MODE_CHECK_DETAIL.address) then
+      gyroModeCheck = GYRO_MODE_CHECK_RESPONSE
+      nextOpTime = os.clock() + OPERATION_TIMEOUT
+    end
+  elseif gyroModeCheck == GYRO_MODE_CHECK_RESPONSE then
+    local value = Sensor.getParameter()
+    if value and value % 256 == GYRO_MODE_CHECK_DETAIL.address then
+      if GYRO_MODE_CHECK_DETAIL.passFunction(value) then
+        gyroModeCheck = GYRO_MODE_CHECK_PASS
+        if caliButton ~= nil then
+          caliButton:enable(true)
+        end
+      else
+        gyroModeCheck = GYRO_MODE_CHECK_REJECT
+      end
+      lcd.invalidate()
+    elseif os.clock() >= nextOpTime then
+      gyroModeCheck = GYRO_MODE_CHECK_REQUEST
+    end
+  elseif nextStep then
     if step < 6 then
       bitmap = lcd.loadBitmap(getCaliBitmapPath())
       Dialog.closeDialog()

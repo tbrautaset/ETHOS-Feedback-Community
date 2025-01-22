@@ -1,4 +1,4 @@
-local LUA_VERSION = "3.0.2";
+local LUA_VERSION = "3.0.3";
 local nameI18n = {en = "Stabilizer config"}
 
 local function name()
