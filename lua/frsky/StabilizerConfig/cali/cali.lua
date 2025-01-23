@@ -38,11 +38,11 @@ local SR6_CALI_LABELS = {
 local CALI_LABELS = {
   STR("CaliCommonStep1"),
   STR("CaliCommonStep2"),
-  STR("CaliCommonStep1"),
-  STR("CaliCommonStep1"),
-  STR("CaliCommonStep1"),
-  STR("CaliCommonStep1"),
-  STR("CaliCommonStep1"),
+  STR("CaliCommonStep3"),
+  STR("CaliCommonStep4"),
+  STR("CaliCommonStep5"),
+  STR("CaliCommonStep6"),
+  STR("CaliFinished"),
 }
 
 local function getCaliBitmapPath()
