@@ -26,7 +26,7 @@ Sensor = CommonFile.Sensor
 Dialog = CommonFile.Dialog
 Progress = CommonFile.Progress
 
-STR = assert(loadfile(GlobalPath .. "i18n.lua"))().translate
+STR = assert(loadfile(GlobalPath .. "/i18n/i18n.lua"))().translate
 
 local function name()
   return STR("ScriptName")
