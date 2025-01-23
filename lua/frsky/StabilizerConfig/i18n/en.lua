@@ -1,5 +1,6 @@
 return {
   ScriptName = "Stabilizer config",
+
   ScriptVersion = "Script version",
   RemoteDevice = "Remote device",
   RemoteVersion = "Remote version",
@@ -19,10 +20,19 @@ return {
   Calibration = "Calibration",
   Configuration = "Configuration",
 
+  On = "On",
+  Off = "Off",
+  Start = "Start",
+  Cancel = "Cancel",
+  Close = "Close",
+  Disable = "Disable",
+  Enable = "Enable",
   Back = "Back",
   Open = "Open",
-
   OK = "OK",
+  Reset = "Reset",
+
+  SaveAndLoad = "Save & Load configures",
   Load = "Load",
   Save = "Save",
   LoadFailed = "Load failed",
@@ -39,14 +49,10 @@ return {
   FSError = "File operation error!",
 
   GyroMode = "Gyro mode",
-  On = "On",
-  Off = "Off",
   Basic = "Basic",
   ADV = "ADV",
 
   ADVConfig = "ADV config",
-  Disable = "Disable",
-  Enable = "Enable",
 
   Calibrate = "Calibrate",
   Calibrating = "Calibrating",
@@ -73,9 +79,6 @@ return {
   CheckingGyroMode = "Checking gyro mode ...",
   GyroModeDisabled = "Gyro mode not enable!",
 
-  Start = "Start",
-  Cancel = "Cancel",
-  Close = "Close",
   PreCaliLevelCali = "Level calibration",
   PreCaliStickCenter = "Stick center calibration",
   PreCaliStickRange = "Stick range calibration",
@@ -87,4 +90,31 @@ return {
   PreCaliFailed = "Calibration failed!\nPlease check the connection state!",
 
   ConfirmToBegin = "Please confirm to begin",
+
+  ConfirmReset = "Confirm reset",
+  ResetLabel = "Settings are about to be reset.\nPlease confirm to continue.",
+  Stabilizer = "Stabilizer",
+  QuickMode = "Quick mode",
+  WingType = "Wing type",
+  Normal = "Normal",
+  Delta = "Delta",
+  VTail = "VTail",
+  MountingType = "Mounting type",
+  Horizontal = "Horizontal",
+  HorizontalRev = "Horizontal reverse",
+  Vertical = "Vertical",
+  VerticalRev = "Vertical reverse",
+  CHMode = "{{ CH }} mode",
+  CHInvert = "{{ CH }} inverted",
+  CHStabGain = "{{ CH }} stab gain",
+  CHAutoLvlGain = "{{ CH }} auto lvl gain",
+  CHHoverGain = "{{ CH }} hover gain",
+  CHKnifeGain = "{{ CH }} knife gain",
+  CHAutoLvlOffset = "{{ CH }} auto lvl offset",
+  CHHoverOffset = "{{ CH }} hover offset",
+  CHKnifeOffset = "{{ CH }} knife offset",
+  RollDegree = "Roll degree",
+  PitchDegree = "Pitch degree",
+  CHStickPriority = "{{ CH }} stick priority",
+  CHRevStickPriority = "{{ CH }} rev. stick priority"
 }

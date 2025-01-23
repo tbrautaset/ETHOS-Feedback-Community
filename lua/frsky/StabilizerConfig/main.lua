@@ -1,6 +1,6 @@
 local LUA_VERSION = "3.0.3";
 
-TEST = false
+TEST = true
 GlobalPath = ""
 
 local REMOTE_VERSION_CONSTRAINT = function (major, minor, revision)
@@ -26,7 +26,7 @@ Sensor = CommonFile.Sensor
 Dialog = CommonFile.Dialog
 Progress = CommonFile.Progress
 
-STR = assert(loadfile(GlobalPath .. "/i18n/i18n.lua"))().translate
+STR = assert(loadfile(GlobalPath .. "i18n/i18n.lua"))().translate
 
 local function name()
   return STR("ScriptName")
