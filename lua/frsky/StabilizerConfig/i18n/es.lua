@@ -1,7 +1,7 @@
 return {
   ScriptName = "Configuración estabilización",
 
-  ScriptVersion = "Cersión script",
+  ScriptVersion = "Versión script",
   RemoteDevice = "Dispositivo remoto",
   RemoteVersion = "Versión remota",
   UnsupportDevice = "Dispositivo no soportado",
