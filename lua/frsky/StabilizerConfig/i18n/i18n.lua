@@ -9,8 +9,8 @@ local function translate(key, paramTable)
   local map = I18nMap[locale] or I18nMap['en']
   local string = map[key] or I18nMap['en'][key]
   if paramTable ~= nil and type(paramTable) == 'table' then
-    string = string:gsub("{{%s*(%w+)%s*}}", function(key)
-      return tostring(paramTable[key] or "")
+    string = string:gsub("{{%s*(%w+)%s*}}", function(replacement)
+      return tostring(paramTable[replacement] or "")
     end)
   end
   return string

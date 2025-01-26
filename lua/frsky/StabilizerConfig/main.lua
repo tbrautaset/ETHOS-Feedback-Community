@@ -1,6 +1,6 @@
 local LUA_VERSION = "3.0.3";
 
-TEST = true
+TEST = false
 GlobalPath = ""
 
 local REMOTE_VERSION_CONSTRAINT = function (major, minor, revision)
@@ -46,6 +46,27 @@ local MAX_TIMEOUT = 10
 local supportFields = nil
 
 local createFunction = nil
+
+local file = nil
+local SAVE_STATE_REQUEST_NEXT = 0
+local SAVE_STATE_REQUEST_CURRENT = 1
+local SAVE_STATE_RESPONSE = 2
+local SAVE_STATE_FINISH = 3
+local LOAD_STATE_READ = 0
+local LOAD_STATE_WRITE = 1
+local LOAD_STATE_FINISH = 2
+local saveLoadState = SAVE_STATE_REQUEST_CURRENT
+local FIRST_ADDRESS = 0xA5
+local LAST_ADDRESS = 0xD2
+local backupAddress = FIRST_ADDRESS
+local fileSize = nil
+local line = nil
+local loadSize = nil
+local function isAddressSupportBackup(address)
+  return (address >= 0xA5 and address <= 0xB1)
+      or (address >= 0xB3 and address <= 0xB8)
+      or (address >= 0xC0 and address <= 0xD2)
+end
 
 local REMOTE_DEVICE = {address = 0xFE, state = STATE_READ, field = nil, label = STR("RemoteDevice"), dataHandler = function (value, task)
   Product.family = (value >> 8) & 0xFF
@@ -121,10 +142,197 @@ local function getPage(page)
   return page.file
 end
 
+local restoreFileName = ""
+local function buildBackupForm(ePanel, focusRefresh)
+  ePanel:clear()
+
+  local ePanelLine = ePanel:addLine("")
+  local slots = form.getFieldSlots(ePanelLine, {270, "- "..STR("Load").." -","- "..STR("Save").." -"})
+
+  form.addFileField(ePanelLine, slots[1], "", "csv+ext", function ()
+    return restoreFileName
+  end, function (newFile)
+    restoreFileName = newFile
+  end)
+
+  form.addTextButton(ePanelLine, slots[2], STR("Load"), function()
+    print("Load pressed")
+    file = nil
+    fileSize = nil
+    line = nil
+    loadSize = 0
+    if not restoreFileName or restoreFileName == "" then
+      Dialog.openDialog({title = STR("NoFileSelected"), message = STR("SelectFileFirstly"), buttons = {{label = STR("OK"), action = function () Dialog.closeDialog() end}},})
+      return
+    end
+
+    file = io.open(restoreFileName, "r+")
+    if file == nil then
+      Dialog.openDialog({title = STR("LoadFailed"), message = STR("FileReadError"), buttons = {{label = STR("OK"), action = function () Dialog.closeDialog() end}},})
+      return
+    end
+
+    local status, size = pcall(function()
+      local size = file:seek("end")
+      file:seek("set")
+      return size
+    end)
+
+    if status then
+      print("file:seek() is supported")
+      fileSize = size
+    end
+
+    if not Progress.isDialogOpen() then
+      saveLoadState = LOAD_STATE_READ
+      backupAddress = FIRST_ADDRESS
+      Progress.openProgressDialog({title = STR("Loading"), message = STR("LoadingConfigurations", {progress = "0"}), close = function ()
+        file:close()
+        file = nil
+        Progress.clearDialog()
+      end, wakeup = function ()
+        if saveLoadState == LOAD_STATE_READ then
+          line = file:read("l")
+          saveLoadState = LOAD_STATE_WRITE
+
+        elseif saveLoadState == LOAD_STATE_WRITE then
+          if line == nil then
+            saveLoadState = LOAD_STATE_FINISH
+            Progress.message(STR("ConfigFileLoaded", {name = '\n' .. restoreFileName}))
+            Progress.value(100)
+            Progress.closeAllowed(true)
+            return
+          end
+
+          local lineData = {}
+          for value in line:gmatch("([^,]+)") do
+            lineData[#lineData + 1] = tonumber(value)
+            if #lineData >= 2 then
+              break
+            end
+          end
+          if lineData[1] ~= nil and lineData[2] ~= nil and Sensor.writeParameter(lineData[1], lineData[2]) then
+            print("Sensor.writeParameter: " .. string.format("%X", lineData[1]) .. ", value: ", string.format("%X", lineData[2]))
+            saveLoadState = LOAD_STATE_READ
+            loadSize = loadSize + #line + 1
+            local progress
+            if fileSize then
+              progress = math.ceil(loadSize * 100 / fileSize)
+            else
+              progress = math.ceil((backupAddress - FIRST_ADDRESS) * 100 / (LAST_ADDRESS - FIRST_ADDRESS + 1))
+              backupAddress = backupAddress + 1
+            end
+            Progress.message(STR("LoadingConfigurations", {progress = "" .. progress}))
+            Progress.value(progress)
+            line = nil
+          end
+        end
+      end})
+      Progress.closeAllowed(false)
+    else
+      file:close()
+      file = nil
+    end
+  end)
+
+  local button = form.addTextButton(ePanelLine, slots[3], STR("Save"), function()
+    file = nil
+    if not Progress.isDialogOpen() then
+      print("Save pressed")
+      local configPrefix = model.name():gsub("%s", "_")
+      local configSuffix = ".csv"
+      local fileName = configPrefix .. configSuffix
+      file = io.open(fileName, "r")
+      if file ~= nil then
+        for i = 2, 99 do
+          fileName = configPrefix .. string.format("%02d", i) .. configSuffix
+          file = io.open(fileName, "r")
+          if file == nil then
+            break
+          end
+          file:close()
+          if i == 99 then
+            print("File name not available")
+            Dialog.openDialog({title = STR("SaveFailed"), message = STR("CannotSaveToFile"), buttons = {{label = STR("OK"), action = function () Dialog.closeDialog() end}},})
+            return
+          end
+        end
+      end
+
+      print("Open file: ", fileName)
+      file = io.open(fileName, "w+")
+      if file ~= nil then
+        backupAddress = FIRST_ADDRESS
+        saveLoadState = SAVE_STATE_REQUEST_CURRENT
+        Progress.openProgressDialog({title = STR("Saving"), message = STR("SavingConfigurations", {progress = "0"}), close = function ()
+          file:close()
+          file = nil
+          -- E.M. will be raised
+          -- buildBackupForm(ePanel, true)
+          Progress.clearDialog()
+        end, wakeup = function ()
+          if saveLoadState == SAVE_STATE_RESPONSE then
+            local value = Sensor.getParameter()
+            -- print("Get value: ", value)
+            if (value ~= nil) and (value & 0xFF == backupAddress) then
+              local address = value & 0xFF
+              value = value >> 8
+              local output = "" .. address .. "," .. value .. ",\n"
+              file:write(output)
+              print("Save value: ", output)
+              local progress = math.ceil((backupAddress - FIRST_ADDRESS) * 100 / (LAST_ADDRESS - FIRST_ADDRESS + 1))
+              Progress.message(STR("SavingConfigurations", {progress = "" .. progress}))
+              Progress.value(progress)
+              saveLoadState = SAVE_STATE_REQUEST_NEXT
+            elseif os.clock() > nextOpTime then
+              saveLoadState = SAVE_STATE_REQUEST_CURRENT
+            end
+
+          elseif saveLoadState ~= SAVE_STATE_FINISH then
+            if saveLoadState == SAVE_STATE_REQUEST_NEXT then
+              backupAddress = backupAddress + 1
+              while not isAddressSupportBackup(backupAddress) do
+                if backupAddress > LAST_ADDRESS then
+                  saveLoadState = SAVE_STATE_FINISH
+                  Progress.message(STR("ConfigSaveToFile", {fileName = fileName}))
+                  Progress.value(100)
+                  Progress.closeAllowed(true)
+                  return
+                end
+                backupAddress = backupAddress + 1
+              end
+              saveLoadState = SAVE_STATE_REQUEST_CURRENT
+            end
+
+            if Sensor.requestParameter(backupAddress) then
+              print("Request address: ", string.format("%X", backupAddress))
+              saveLoadState = SAVE_STATE_RESPONSE
+              nextOpTime = os.clock() + OPERATION_TIMEOUT
+            end
+          end
+        end})
+        Progress.closeAllowed(false)
+      else
+        print("Error open file")
+        Dialog.openDialog({title = STR("SaveFailed"), message = STR("FSError"), buttons = {{label = STR("OK"), action = function () Dialog.closeDialog() end}}})
+      end
+    end
+  end)
+
+  if focusRefresh then
+    button:focus()
+  else
+    ePanel:open(false)
+  end
+end
+
 local function buildpage()
   if supportFields == nil then
     return
   end
+
+  local configureForm = form.addExpansionPanel(STR("SaveAndLoad"))
+  buildBackupForm(configureForm)
 
   for index, page in pairs(pages) do
     for i, supportField in pairs(supportFields) do
