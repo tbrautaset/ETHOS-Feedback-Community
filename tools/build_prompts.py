@@ -23,23 +23,31 @@ except:
 
 def extract_csv(path):
     result = []
+    filenames = set()
     with codecs.open(path, "r", "utf-8") as f:
         reader = csv.reader(f)
 
         # This skips the first row of the CSV file
         next(reader)
     
-        for row in reader:
+        for i, row in enumerate(reader):
             if len(row) == 4:
                 path, text, options_text, description = row
-                options = {}
-                for part in options_text.split(";"):
-                    if part:
-                        key, value = part.split("=")
-                        options[key] = value
-                result.append((path, text, options, description))
+                if path.endswith(".wav"):
+                    if path not in filenames:
+                        options = {}
+                        for part in options_text.split(";"):
+                            if part:
+                                key, value = part.split("=")
+                                options[key] = value
+                        result.append((path, text, options, description))
+                        filenames.add(path)
+                    else:
+                        print("Line %d: duplicate file %s" % (i, path))
+                else:
+                    print("Line %d: invalid file %s" % (i, path)    )
             else:
-                print("Invalid row: %s" % row)
+                print("Line %d: invalid format" % i)
     return result
 
 
