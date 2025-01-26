@@ -328,7 +328,8 @@
         "BackupComponents": "Sikkerhetskopier komponenter",
         "AnalysingComponents": "Analyserer komponenter...",
         "BackupNotMatchRadio": "Denne sikkerhetskopien passer ikke med denne radioen. Ønsker du å fortsette?",
-        "WritingBackupFile": "Skriver sikkerhetskopi-fil(er)..."
+        "WritingBackupFile": "Skriver sikkerhetskopi-fil(er)...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "Om",

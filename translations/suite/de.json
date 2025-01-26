@@ -327,7 +327,8 @@
         "BackupComponents": "Backup Komponenten",
         "AnalysingComponents": "Analyse der Komponenten...",
         "BackupNotMatchRadio": "Diese Sicherung passt nicht zu Ihrem Sender. Möchten Sie fortfahren?",
-        "WritingBackupFile": "Sicherungsdatei schreiben..."
+        "WritingBackupFile": "Sicherungsdatei schreiben...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "Uber uns",

@@ -327,7 +327,8 @@
         "BackupComponents": "备份组件",
         "AnalysingComponents": "解析组件中...",
         "BackupNotMatchRadio": "这份备份不适用于你的遥控器, 你确定要继续吗?",
-        "WritingBackupFile": "正在写入备份文件..."
+        "WritingBackupFile": "正在写入备份文件...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "关于",

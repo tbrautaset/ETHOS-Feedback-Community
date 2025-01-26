@@ -320,7 +320,8 @@
         "BackupComponents": "Componentes del Backup",
         "AnalysingComponents": "Analizando componentes...",
         "BackupNotMatchRadio": "Este backup no pertenece a su radio. ¿Quiere continuar?",
-        "WritingBackupFile": "Escribiendo archivo backup..."
+        "WritingBackupFile": "Escribiendo archivo backup...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "Acerca de",

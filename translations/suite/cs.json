@@ -326,7 +326,8 @@
         "BackupComponents": "Záloha komponent",
         "AnalysingComponents": "Analyzuji komponenty...",
         "BackupNotMatchRadio": "Tato záloha se neshoduje s vaším rádiem. Chcete pokračovat?",
-        "WritingBackupFile": "Zapisuji soubor zálohy..."
+        "WritingBackupFile": "Zapisuji soubor zálohy...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "O aplikaci",

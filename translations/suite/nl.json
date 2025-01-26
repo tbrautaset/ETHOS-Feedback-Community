@@ -327,7 +327,8 @@
         "BackupComponents": "Backup Components",
         "AnalysingComponents": "Analysing components...",
         "BackupNotMatchRadio": "This backup doesn't match with your radio. Do you want to continue?",
-        "WritingBackupFile": "Writing backup file..."
+        "WritingBackupFile": "Writing backup file...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "About",

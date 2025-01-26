@@ -326,7 +326,8 @@
         "BackupComponents": "Backup Componenti",
         "AnalysingComponents": "Analisi componenti...",
         "BackupNotMatchRadio": "Questo backup non corrisponde con la tua radio. Vuoi continuare?",
-        "WritingBackupFile": "Scrittura backup..."
+        "WritingBackupFile": "Scrittura backup...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "A proposito",

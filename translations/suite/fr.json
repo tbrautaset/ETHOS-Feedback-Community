@@ -327,7 +327,8 @@
         "BackupComponents": "Sauvegarder les éléments",
         "AnalysingComponents": "Analyse des éléments ...",
         "BackupNotMatchRadio": "Cette sauvegarde ne correspond pas à votre radio. Continuer ?",
-        "WritingBackupFile": "Ecriture sauvegarde en cours ..."
+        "WritingBackupFile": "Ecriture sauvegarde en cours ...",
+        "CreateAtVersion": "Create at version"
     },
     "About": {
         "About": "A propos",
