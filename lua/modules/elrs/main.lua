@@ -143,7 +143,7 @@ local function addUnsignedLine(widget, field, name, fieldData, offset, size)
           table.insert(frame, 4, value & 0xFF)
           value = value >> 8
         end
-        widget.pushFrame(0x2D, frame)
+        widget.sensor:pushFrame(0x2D, frame)
       end)
   end
 end
@@ -162,7 +162,7 @@ local function addChoiceLine(widget, field, name, fieldData, offset)
       end, 
       function(value)
         field.value = value
-        widget.pushFrame(0x2D, {deviceId, handsetId, field.id, value})
+        widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, value})
       end)
   end
 end
@@ -198,7 +198,7 @@ local function addCommandLine(widget, field, name, fieldData, offset)
           {
             label = "OK",
             action = function()
-              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
+              widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
               fieldTimeout = os.time() + field.timeout / 100 -- we are expecting an immediate response
               field.status = 4
             end
@@ -210,7 +210,7 @@ local function addCommandLine(widget, field, name, fieldData, offset)
           {
             label = "Cancel",
             action = function()
-              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
               fieldPopup = nil
               return true
             end
@@ -224,13 +224,13 @@ local function addCommandLine(widget, field, name, fieldData, offset)
     field.widget = form.addTextButton(line, nil, name, function()
       if field.status < 4 then
         field.status = 1
-        widget.pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
+        widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
         fieldPopup = field
         field.dialog = form.openDialog(name, field.info, {
           {
             label = "Cancel",
             action = function()
-              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
               fieldPopup = nil
               return true
             end
@@ -289,11 +289,6 @@ local function parseParameterInfoMessage(widget, data)
         else
           print("Field '" .. name .. "' type=" .. type .. " not supported")
         end
-
-        -- Return value is if the screen should be updated
-        -- If deviceId is TX module, then the Bad/Good drives the update; for other
-        -- devices update each new item. and always update when the queue empties
-        return deviceId ~= 0xEE or #loadQ == 0
       end
     end
 
@@ -305,7 +300,7 @@ end
 local function wakeup(widget)
   local time = os.clock()
   while true do
-    command, data = widget.popFrame()
+    command, data = widget.sensor:popFrame()
     if command == nil then
       break
     elseif command == 0x29 then
@@ -324,15 +319,15 @@ local function wakeup(widget)
 
   if fieldPopup then        
     if time > fieldTime and fieldPopup.status ~= 3 then
-      widget.pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
+      widget.sensor:pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
       fieldTime = time + fieldPopup.timeout / 100
     end
   elseif time > devicesRefreshTime and deviceId == nil then
     devicesRefreshTime = time + 1 -- 1s
-    widget.pushFrame(0x28, {0x00, 0xEA})
+    widget.sensor:pushFrame(0x28, {0x00, 0xEA})
   elseif time > fieldTime and deviceId ~= nil then
     if #loadQ > 0 then
-      widget.pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
+      widget.sensor:pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
       fieldTime = time + 0.5
     end
   end
