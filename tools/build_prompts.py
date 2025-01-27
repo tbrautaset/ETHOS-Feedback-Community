@@ -31,6 +31,7 @@ def extract_csv(path):
         next(reader)
     
         for i, row in enumerate(reader):
+            line = i + 2
             if len(row) == 4:
                 path, text, options_text, description = row
                 if path.endswith(".wav"):
@@ -43,11 +44,11 @@ def extract_csv(path):
                         result.append((path, text, options, description))
                         filenames.add(path)
                     else:
-                        print("Line %d: duplicate file %s" % (i, path))
+                        print("Line %d: duplicate file %s" % (line, path))
                 else:
-                    print("Line %d: invalid file %s" % (i, path)    )
+                    print("Line %d: invalid file %s" % (line, path)    )
             else:
-                print("Line %d: invalid format" % i)
+                print("Line %d: invalid format" % line)
     return result
 
 
