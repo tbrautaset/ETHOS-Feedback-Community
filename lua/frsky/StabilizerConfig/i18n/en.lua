@@ -4,8 +4,8 @@ return {
   ScriptVersion = "Script version",
   RemoteDevice = "Remote device",
   RemoteVersion = "Remote version",
-  UnsupportDevice = "Unsupport device",
-  UncompitableVersion = "Uncompitable version",
+  UnsupportDevice = "Unsupported device",
+  UncompitableVersion = "Incompatible version",
   Reading = "Reading ...",
   UnableToRead = "Unable to read",
 
@@ -13,7 +13,7 @@ return {
   Internal = "Internal",
   External = "External",
 
-  BasicConfig = "Basic configure",
+  BasicConfig = "Basic configuration",
   StabilizerGroup1 = "Stabilizer group 1",
   StabilizerGroup2 = "Stabilizer group 2",
   SixAxisCali = "6-axis calibration",
@@ -32,20 +32,20 @@ return {
   OK = "OK",
   Reset = "Reset",
 
-  SaveAndLoad = "Save & Load configures",
+  SaveAndLoad = "Save & Load configurations",
   Load = "Load",
   Save = "Save",
   LoadFailed = "Load failed",
   SaveFailed = "Save failed",
   ReadSettingsFirstly = "Please read the settings firstly!",
   NoFileSelected = "No file selected",
-  SelectFileFirstly = "Please select the file you\nwant to load the configures from!",
+  SelectFileFirstly = "Please select the file you\nwant to load the configurations from!",
   FileReadError = "File read error!",
   ConfigurationLoaded = "Configuration loaded",
-  ConfigFileLoaded = "Configure has been loaded from {{ file }}",
+  ConfigFileLoaded = "Configuration has been loaded from {{ file }}",
   CannotSaveToFile = "Cannot save to file!",
   configurationSaved = "Configuration Saved",
-  ConfigSaveToFile = "Configure has been saved into {{ fileName }}",
+  ConfigSaveToFile = "Configuration has been saved into {{ fileName }}",
   FSError = "File operation error!",
   Saving = "Saving",
   SavingConfigurations = "Saving configurations, finished {{ progress }}%",
@@ -60,7 +60,7 @@ return {
 
   Calibrate = "Calibrate",
   Calibrating = "Calibrating",
-  WaitUntilCali = "Please wait until calibration finished ...",
+  WaitUntilCali = "Please wait until calibration is finished ...",
   PressCaliToStart = "Press \"Calibrate\" button to start",
   CalibrationFinished = "Calibration finished!",
 
@@ -73,10 +73,10 @@ return {
 
   CaliCommonStep1 = "Place your Stabilizer Rx horizontal with the front facing up.",
   CaliCommonStep2 = "Place your Stabilizer Rx horizontal with the back facing up.",
-  CaliCommonStep3 = "Place your Stabilizer Rx vertical with the label tilted to the left.",
-  CaliCommonStep4 = "Place your Stabilizer Rx vertical with the label tilted to the right.",
-  CaliCommonStep5 = "Place your Stabilizer Rx vertical with the label displayed upright.",
-  CaliCommonStep6 = "Place your Stabilizer Rx vertical with the label displayed upside down.",
+  CaliCommonStep3 = "Place your Stabilizer Rx vertical with the label facing to the left.",
+  CaliCommonStep4 = "Place your Stabilizer Rx vertical with the label facing to the right.",
+  CaliCommonStep5 = "Place your Stabilizer Rx vertical with the label facing upright.",
+  CaliCommonStep6 = "Place your Stabilizer Rx vertical with the label facing upside down.",
 
   CaliFinished = "Calibration finished. You can exit this page now",
 
