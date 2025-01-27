@@ -23,7 +23,6 @@ local function create()
   fieldPopup = nil
   currentParent = nil
   currentExpansionPanel = nil
-  print(crsf.getSensor, crsf.getSensor())
   if crsf.getSensor then
     local sensor = crsf.getSensor()
     popFrame = function() return sensor:popFrame() end
