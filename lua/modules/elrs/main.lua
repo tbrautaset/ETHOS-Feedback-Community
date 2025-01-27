@@ -17,38 +17,23 @@ local currentParent
 local currentExpansionPanel
 local menuDepth = 0
 
-local function pauseTelemetry(state)
-  if crsf.getSensor ~= nil then
-    CRSF_PAUSE_TELEMETRY = state
-    ELRS_PAUSE_TELEMETRY = state
-  end
-end
-
-local sensor
-local popFrame
-local pushFrame
-
 local function create()
   devices = {}
   deviceId = nil
   fieldPopup = nil
   currentParent = nil
   currentExpansionPanel = nil
-  pauseTelemetry(true)
   if crsf.getSensor then
-    sensor = crsf.getSensor()
+    local sensor = crsf.getSensor()
     popFrame = function() return sensor:popFrame() end
     pushFrame = function(x, y) return sensor:pushFrame(x, y) end
+    return {sensor=sensor}
   else
-    popFrame = function() return crsf.popFrame() end
-    pushFrame = function(x, y) return crsf.pushFrame(x, y) end
+    local sensor = {}
+    sensor:popFrame = function() return crsf.popFrame() end
+    sensor:pushFrame = function(x, y) return crsf.pushFrame(x, y) end
+    return {sensor=sensor}
   end
-  return {}
-end
-
-local function close()
-  pauseTelemetry(false)
-  sensor = nil
 end
 
 local function createDevice(id, name, fieldsCount)
@@ -138,7 +123,7 @@ local function parseChoiceValues(data, offset)
 end
 
 -- UINT8 (0) / UINT16 (2)
-local function addUnsignedLine(field, name, fieldData, offset, size)
+local function addUnsignedLine(widget, field, name, fieldData, offset, size)
   local min, max, default, unit
   field.value, offset = parseValue(fieldData, offset, size)
   min, offset = parseValue(fieldData, offset, size)
@@ -158,13 +143,13 @@ local function addUnsignedLine(field, name, fieldData, offset, size)
           table.insert(frame, 4, value & 0xFF)
           value = value >> 8
         end
-        pushFrame(0x2D, frame)
+        widget.pushFrame(0x2D, frame)
       end)
   end
 end
 
 -- Select (9)
-local function addChoiceLine(field, name, fieldData, offset)
+local function addChoiceLine(widget, field, name, fieldData, offset)
   local values
   values, offset = parseChoiceValues(fieldData, offset)
   field.value = fieldData[offset]
@@ -177,7 +162,7 @@ local function addChoiceLine(field, name, fieldData, offset)
       end, 
       function(value)
         field.value = value
-        pushFrame(0x2D, {deviceId, handsetId, field.id, value})
+        widget.pushFrame(0x2D, {deviceId, handsetId, field.id, value})
       end)
   end
 end
@@ -198,7 +183,7 @@ local function addInfoLine(field, name, fieldData, offset)
 end
 
 -- Command (13)
-local function addCommandLine(field, name, fieldData, offset)
+local function addCommandLine(widget, field, name, fieldData, offset)
   field.status = fieldData[offset]
   field.timeout = fieldData[offset + 1]
   field.info = parseString(fieldData, offset + 2)
@@ -213,7 +198,7 @@ local function addCommandLine(field, name, fieldData, offset)
           {
             label = "OK",
             action = function()
-              pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
+              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 4}) -- lcsConfirmed
               fieldTimeout = os.time() + field.timeout / 100 -- we are expecting an immediate response
               field.status = 4
             end
@@ -225,7 +210,7 @@ local function addCommandLine(field, name, fieldData, offset)
           {
             label = "Cancel",
             action = function()
-              pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
               fieldPopup = nil
               return true
             end
@@ -239,13 +224,13 @@ local function addCommandLine(field, name, fieldData, offset)
     field.widget = form.addTextButton(line, nil, name, function()
       if field.status < 4 then
         field.status = 1
-        pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
+        widget.pushFrame(0x2D, {deviceId, handsetId, field.id, field.status})
         fieldPopup = field
         field.dialog = form.openDialog(name, field.info, {
           {
             label = "Cancel",
             action = function()
-              pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
+              widget.pushFrame(0x2D, {deviceId, handsetId, field.id, 5}) -- lcsCancelled
               fieldPopup = nil
               return true
             end
@@ -256,7 +241,7 @@ local function addCommandLine(field, name, fieldData, offset)
   end
 end
 
-local function parseParameterInfoMessage(data)
+local function parseParameterInfoMessage(widget, data)
   local fieldId = (fieldPopup and fieldPopup.id) or loadQ[#loadQ]
   if data[2] ~= deviceId or data[3] ~= fieldId then
     fieldData = {}
@@ -290,20 +275,25 @@ local function parseParameterInfoMessage(data)
         end
 
         if type == 0 then
-          addUnsignedLine(field, name, fieldData, offset, 1)
+          addUnsignedLine(widget, field, name, fieldData, offset, 1)
         elseif type == 2 then
-          addUnsignedLine(field, name, fieldData, offset, 2)
+          addUnsignedLine(widget, field, name, fieldData, offset, 2)
         elseif type == 9 then
-          addChoiceLine(field, name, fieldData, offset)
+          addChoiceLine(widget, field, name, fieldData, offset)
         elseif type == 11 then
           addFolderLine(field, name, fieldData, offset)
         elseif type == 12 then
           addInfoLine(field, name, fieldData, offset)
         elseif type == 13 then
-          addCommandLine(field, name, fieldData, offset)
+          addCommandLine(widget, field, name, fieldData, offset)
         else
           print("Field '" .. name .. "' type=" .. type .. " not supported")
         end
+
+        -- Return value is if the screen should be updated
+        -- If deviceId is TX module, then the Bad/Good drives the update; for other
+        -- devices update each new item. and always update when the queue empties
+        return deviceId ~= 0xEE or #loadQ == 0
       end
     end
 
@@ -313,11 +303,9 @@ local function parseParameterInfoMessage(data)
 end
 
 local function wakeup(widget)
-  pauseTelemetry(lcd.isVisible())
-
   local time = os.clock()
   while true do
-    command, data = popFrame()
+    command, data = widget.popFrame()
     if command == nil then
       break
     elseif command == 0x29 then
@@ -325,7 +313,7 @@ local function wakeup(widget)
       menuDepth = 0
     elseif command == 0x2B then
       menuDepth = 1
-      parseParameterInfoMessage(data)
+      parseParameterInfoMessage(widget, data)
       if #loadQ > 0 or expectChunksRemain >= 0 then
         fieldTime = 0 -- request next chunk immediately
       elseif fieldPopup then
@@ -336,32 +324,23 @@ local function wakeup(widget)
 
   if fieldPopup then        
     if time > fieldTime and fieldPopup.status ~= 3 then
-      pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
+      widget.pushFrame(0x2D, {deviceId, handsetId, fieldPopup.id, 6}) -- lcsQuery
       fieldTime = time + fieldPopup.timeout / 100
     end
   elseif time > devicesRefreshTime and deviceId == nil then
     devicesRefreshTime = time + 1 -- 1s
-    pushFrame(0x28, {0x00, 0xEA})
+    widget.pushFrame(0x28, {0x00, 0xEA})
   elseif time > fieldTime and deviceId ~= nil then
     if #loadQ > 0 then
-      pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
+      widget.pushFrame(0x2C, {deviceId, handsetId, loadQ[#loadQ], fieldChunk})
       fieldTime = time + 0.5
     end
   end
 end
 
 local function event(widget, category, value, x, y)
-  if menuDepth == 1 then
-    if category == EVT_CLOSE then
-      form.clear()
-      devices = {}
-      deviceId = nil
-      fieldPopup = nil
-      currentParent = nil
-      currentExpansionPanel = nil
-      return true
-    end
-    if category == 0 and value == 35 then
+  if menuDepth > 0 then
+    if category == EVT_CLOSE or (category == EVT_KEY and value == KEY_RTN_BREAK) then
       form.clear()
       devices = {}
       deviceId = nil
@@ -371,7 +350,6 @@ local function event(widget, category, value, x, y)
       return true
     end
   end
-  pauseTelemetry(false)
   return false
 end
 
