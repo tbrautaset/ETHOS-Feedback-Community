@@ -76,9 +76,9 @@ end
 local function reloadRelatedFields(field)
   for i = #fields, 1, -1 do
     if fields[i].parent == field.parent then
-      -- if fields[i].widget ~= nil then
-      --   fields[i].widget:enable(false)
-      -- end
+      if fields[i].widget ~= nil then
+        fields[i].widget:enable(false)
+      end
       loadQ[#loadQ + 1] = i
     end
   end
@@ -153,13 +153,13 @@ local function addUnsignedLine(widget, field, name, fieldData, offset, size)
       end, 
       function(value)
         field.value = value
-        reloadRelatedFields(field)
         local frame = {deviceId, handsetId, field.id}
         for i = 1, size do
           table.insert(frame, 4, value & 0xFF)
           value = value >> 8
         end
         widget.sensor:pushFrame(0x2D, frame)
+        reloadRelatedFields(field)
       end)
   end
 end
