@@ -186,6 +186,8 @@ local function addChoiceLine(widget, field, name, fieldData, offset)
     if field.widget.title ~= nil then
       field.widget:title(name)
     end
+  else
+    field.widget:enable(true)
   end
 end
 
