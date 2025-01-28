@@ -86,10 +86,10 @@ return {
   PreCaliLevelCali = "Calibration niveau",
   PreCaliStickCenter = "Calibration centres",
   PreCaliStickRange = "Calibration débattements",
-  PreCaliLevelCheckLabel = "Calibration of the horizontal is about to begin.\nPlease place the model in a level position,\nthen press OK to continue.",
-  PreCaliStickCenterLabel = "Stick center calibration is about to begin.\nPlease set the stick to the center position,\nthen press OK to continue.",
-  PreCaliStickRangeLabel =  "Stick range calibration is about to begin.\nAfter pressing OK, please move the stick to\nits full range in all directions to calibrate.",
-  PreCaliStickRangeHint = "Please move the sticks in their full range until calibration is finished ...",
+  PreCaliLevelCheckLabel = "Calibration de la position horizontale.\nMettre le modèle de niveau,\nOK pour poursuivre.",
+  PreCaliStickCenterLabel = "Calibration de la position centrale des manches.\nPositionner les manches au centre,\nOk pour poursuivre.",
+  PreCaliStickRangeLabel =  "Calibration des débattements des manches.\nAprès appuie sur OK, déplacer les manches\nau maximum dans toutes les directions.",
+  PreCaliStickRangeHint = "Déplacer les manches au maximum jusqu'à la fin de la calibration ...",
   PreCaliWaitHint = "Attendre la fin de la calibration ...\n",
   PreCaliFailed = "Echec calibration!\nVérifier la connexion !",
 
@@ -117,8 +117,8 @@ return {
   CHAutoLvlOffset = "{{ CH }} auto lvl offset",
   CHHoverOffset = "{{ CH }} hover offset",
   CHKnifeOffset = "{{ CH }} knife offset",
-  RollDegree = "Roll degree",
-  PitchDegree = "Pitch degree",
+  RollDegree = "Degrés roulis",
+  PitchDegree = "Degrés assiette",
   CHStickPriority = "{{ CH }} stick priority",
   CHRevStickPriority = "{{ CH }} rev. stick priority"
 }
