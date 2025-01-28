@@ -61,20 +61,20 @@ end
 
 local function parseValue(data, offset, size)
   local result = 0
-  for i = 0, size - 1 do 
+  for i = 0, size - 1 do
     result = (result << 8) + data[offset + i] 
   end
   return result, offset + size
 end
 
 local function loadAllFields()
-  for i = #fields, 1, -1 do 
+  for i = #fields, 1, -1 do
     loadQ[#loadQ + 1] = i 
   end
 end
 
 local function reloadRelatedFields(field)
-  for i = 1, #fields do
+  for i = #fields, 1, -1 do
     if fields[i].parent == field.parent then
       if fields[i].widget then
         fields[i].widget:disable()
