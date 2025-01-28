@@ -161,6 +161,9 @@ local function addUnsignedLine(widget, field, name, fieldData, offset, size)
         widget.sensor:pushFrame(0x2D, frame)
         reloadRelatedFields(field)
       end)
+    field.widget:enableInstantChange(true)
+  else
+    field.widget:enable(true)
   end
 end
 
