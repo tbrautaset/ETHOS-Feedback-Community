@@ -180,6 +180,9 @@ local function addChoiceLine(widget, field, name, fieldData, offset)
         field.value = value
         widget.sensor:pushFrame(0x2D, {deviceId, handsetId, field.id, value})
       end)
+    if field.widget.title ~= nil then
+      field.widget:title(name)
+    end
   end
 end
 
