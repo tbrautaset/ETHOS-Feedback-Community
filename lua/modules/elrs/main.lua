@@ -67,6 +67,23 @@ local function parseValue(data, offset, size)
   return result, offset + size
 end
 
+local function loadAllFields()
+  for i = 1, #fields do
+    loadQ[#loadQ + 1] = i 
+  end
+end
+
+local function reloadRelatedFields(field)
+  for i = 1, #fields do
+    if fields[i].parent == field.parent then
+      if fields[i].widget then
+        fields[i].widget:disable()
+      end
+      loadQ[#loadQ + 1] = i
+    end
+  end
+end
+
 local function setCurrentDevice(device)
   deviceId = device.id
   fields = {}
@@ -75,9 +92,7 @@ local function setCurrentDevice(device)
     fields[i] = {} 
   end
   loadQ = {}
-  for fieldId = fieldsCount, 1, -1 do 
-    loadQ[#loadQ + 1] = fieldId 
-  end
+  loadAllFields()
   fieldChunk = 0
   fieldData = {}
   form.clear()
@@ -138,6 +153,7 @@ local function addUnsignedLine(widget, field, name, fieldData, offset, size)
       end, 
       function(value)
         field.value = value
+        reloadRelatedFields(field)
         local frame = {deviceId, handsetId, field.id}
         for i = 1, size do
           table.insert(frame, 4, value & 0xFF)
