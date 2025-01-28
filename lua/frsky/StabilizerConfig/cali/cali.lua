@@ -26,23 +26,23 @@ local function isSR6Mini()
 end
 
 local SR6_CALI_LABELS = {
-  "Place your SR6 horizontal, top side up.",
-  "Place your SR6 horizontal, top side down.",
-  "Place your SR6 vertical, ANT down.",
-  "Place your SR6 vertical, ANT up.",
-  "Place your SR6 with ANT right, top side facing you.",
-  "Place your SR6 with ANT right, back side facing you.",
-  "Calibration finished. You can exit this page now"
+  STR("CaliSR6Step1"),
+  STR("CaliSR6Step2"),
+  STR("CaliSR6Step3"),
+  STR("CaliSR6Step4"),
+  STR("CaliSR6Step5"),
+  STR("CaliSR6Step6"),
+  STR("CaliFinished"),
 }
 
 local CALI_LABELS = {
-  "Place your Stabilizer Rx horizontal with the front facing up.",
-  "Place your Stabilizer Rx horizontal with the back facing up.",
-  "Place your Stabilizer Rx vertical with the label tilted to the left.",
-  "Place your Stabilizer Rx vertical with the label tilted to the right.",
-  "Place your Stabilizer Rx vertical with the label displayed upright.",
-  "Place your Stabilizer Rx vertical with the label displayed upside down.",
-  "Calibration finished. You can exit this page now"
+  STR("CaliCommonStep1"),
+  STR("CaliCommonStep2"),
+  STR("CaliCommonStep3"),
+  STR("CaliCommonStep4"),
+  STR("CaliCommonStep5"),
+  STR("CaliCommonStep6"),
+  STR("CaliFinished"),
 }
 
 local function getCaliBitmapPath()
@@ -55,9 +55,9 @@ end
 
 local function getCaliLabel()
   if gyroModeCheck <= GYRO_MODE_CHECK_RESPONSE then
-    return "Checking gyro mode ..."
+    return STR("CheckingGyroMode")
   elseif gyroModeCheck == GYRO_MODE_CHECK_REJECT then
-    return "Gyro mode not enable!"
+    return STR("GyroModeDisabled")
   elseif isSR6Mini() then
     return SR6_CALI_LABELS[step + 1]
   else
@@ -71,7 +71,7 @@ local function doCalibrate()
   end}}
 
   calibrationState = CALIBRATION_WRITE
-  Dialog.openDialog({title = "Calibrating", message = "Please wait until calibration finished ...\n", buttons = button, wakeup = function ()
+  Dialog.openDialog({title = STR("Calibrating"), message = STR("WaitUntilCali") .. ".\n", buttons = button, wakeup = function ()
     if calibrationState == CALIBRATION_WRITE then
       if Sensor.writeParameter(CALIBRATION_ADDRESS, step) == true then
         print("Sensor.writeParameter(), step: " .. step)
@@ -119,7 +119,7 @@ local function pageInit()
   gyroModeCheck = GYRO_MODE_CHECK_REQUEST
 
   local line = form.addLine("", nil, false)
-  caliButton = form.addTextButton(line, nil, "Calibrate", function() doCalibrate() end)
+  caliButton = form.addTextButton(line, nil, STR("Calibrate"), function() doCalibrate() end)
   caliButton:enable(false)
 
   bitmap = lcd.loadBitmap(getCaliBitmapPath())
@@ -132,7 +132,7 @@ local function paint()
   local tw, th = lcd.getTextSize(getCaliLabel())
   lcd.drawText(width / 2, height / 3, getCaliLabel(), CENTERED)
   if gyroModeCheck == GYRO_MODE_CHECK_PASS and (step < 6 or calibrationState ~= CALIBRATION_OK) then
-    lcd.drawText(width / 2, height / 3 + th, "Press \"Calibrate\" button to start", CENTERED)
+    lcd.drawText(width / 2, height / 3 + th, STR("PressCaliToStart"), CENTERED)
   end
 
   if bitmap ~= nil then
@@ -171,7 +171,7 @@ local function wakeup()
       Dialog.closeDialog()
     else
       bitmap = lcd.loadBitmap(GlobalPath .. "cali/cali_ok.png")
-      Dialog.message("Calibration finished!")
+      Dialog.message(STR("CalibrationFinished"))
     end
     nextStep = false
     lcd.invalidate()
