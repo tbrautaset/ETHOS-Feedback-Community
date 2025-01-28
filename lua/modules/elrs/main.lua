@@ -68,7 +68,7 @@ local function parseValue(data, offset, size)
 end
 
 local function loadAllFields()
-  for i = 1, #fields do
+  for i = #fields, 1, -1 do 
     loadQ[#loadQ + 1] = i 
   end
 end
