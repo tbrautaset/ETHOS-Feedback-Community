@@ -84,8 +84,8 @@ return {
   GyroModeDisabled = "Mode gyro non activé !",
 
   PreCaliLevelCali = "Calibration niveau",
-  PreCaliStickCenter = "Caibration des centres",
-  PreCaliStickRange = "Calibration des débattements",
+  PreCaliStickCenter = "Calibration centres",
+  PreCaliStickRange = "Calibration débattements",
   PreCaliLevelCheckLabel = "Calibration of the horizontal is about to begin.\nPlease place the model in a level position,\nthen press OK to continue.",
   PreCaliStickCenterLabel = "Stick center calibration is about to begin.\nPlease set the stick to the center position,\nthen press OK to continue.",
   PreCaliStickRangeLabel =  "Stick range calibration is about to begin.\nAfter pressing OK, please move the stick to\nits full range in all directions to calibrate.",
