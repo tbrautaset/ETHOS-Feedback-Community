@@ -75,7 +75,7 @@ end
 
 local function reloadRelatedFields(field)
   for i = #fields, 1, -1 do
-    if fields[i].parent == field.parent then
+    if fields[i] ~= field and fields[i].parent == field.parent then
       if fields[i].widget ~= nil then
         fields[i].widget:enable(false)
       end
