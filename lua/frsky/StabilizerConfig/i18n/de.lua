@@ -73,10 +73,10 @@ return {
 
   CaliCommonStep1 = "Legen Sie den Kreisel-RX horizontal mit der Oberseite nach oben.",
   CaliCommonStep2 = "Legen Sie den Kreisel-RX horizontal mit der Oberseite nach unten.",
-  CaliCommonStep3 = "Stellen Sie Ihren Kreisel-Rx senkrecht auf, wobei die Schrift des Etiketts nach links zeigt.",
-  CaliCommonStep4 = "Stellen Sie Ihren Kreisel-Rx senkrecht auf, wobei die Schrift des Etiketts nach rechts zeigt.",
-  CaliCommonStep5 = "Legen Sie Ihren Kreisel-Rx senkrecht hin, wobei die Schrift des Etiketts normal angezeigt wird",
-  CaliCommonStep6 = "Legen Sie Ihren Kreisel Rx senkrecht hin, sobei die Schrift des Etiketts auf dem Kopf steht.",
+  CaliCommonStep3 = "Stellen Sie Ihren Kreisel-Rx senkrecht auf, Beschriftung zeigt nach links.",
+  CaliCommonStep4 = "Stellen Sie Ihren Kreisel-Rx senkrecht auf, Beschriftung zeigt nach rechts.",
+  CaliCommonStep5 = "Legen Sie Ihren Kreisel-Rx auf die lange schmale Seite, Beschriftung wird normal angezeigt",
+  CaliCommonStep6 = "Legen Sie Ihren Kreisel Rx auf die lange schmale Seite, Beschriftung steht auf dem Kopf.",
 
   CaliFinished = "Kalibrierung beendet. Sie können diese Seite jetzt verlassen",
 
