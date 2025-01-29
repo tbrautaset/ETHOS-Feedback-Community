@@ -71,12 +71,12 @@ return {
   CaliSR6Step5 = "Coloque su SR6 con la antena hacia la derecha, y la parte de arriba hacia usted.",
   CaliSR6Step6 = "Coloque su SR6 con la antena a la derecha, y la parte de abajo hacia usted.",
 
-  CaliCommonStep1 = "Coloque su Rx estabilizado horizontal con el frontal hacia usted.",
-  CaliCommonStep2 = "Coloque su Rx estabilizado horizontal con la parte de atrás hacia usted.",
-  CaliCommonStep3 = "Coloque su Rx estabilizado vertical con la etiqueta vuelta hacia la izquierda.",
-  CaliCommonStep4 = "Coloque su Rx estabilizado vertical con la etiqueda vuelta a la derecha.",
-  CaliCommonStep5 = "Coloque su Rx estabilizado vertical con la etiqueta hacia arriba.",
-  CaliCommonStep6 = "Coloque su Rx estabilizado vertical con la etiqueta hacia abajo.",
+  CaliCommonStep1 = "Coloque su Rx estabilizado horizontal con el frontal hacia arriba.",
+  CaliCommonStep2 = "Coloque su Rx estabilizado horizontal con la parte de abajo hacia arriba.",
+  CaliCommonStep3 = "Coloque su Rx estabilizado vertical en su lado corto con la etiqueta vuelta hacia la izquierda.",
+  CaliCommonStep4 = "Coloque su Rx estabilizado vertical en su lado corto con la etiqueda vuelta a la derecha.",
+  CaliCommonStep5 = "Coloque su Rx estabilizado vertical en el lado largo y estrecho con la etiqueta de lado derecho hacia arriba.",
+  CaliCommonStep6 = "Coloque su Rx estabilizado vertical con el lado largo y estrecho con la etiqueta hacia abajo.",
 
   CaliFinished = "Calibración terminada. Ya puede salir de esta página",
 
