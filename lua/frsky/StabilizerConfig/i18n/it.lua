@@ -1,5 +1,5 @@
 return {
-  ScriptName = "Config Stabilizzazion",
+  ScriptName = "Config Stabilizzazione",
 
   ScriptVersion = "Versione Script",
   RemoteDevice = "Dispositivo Remoto",
