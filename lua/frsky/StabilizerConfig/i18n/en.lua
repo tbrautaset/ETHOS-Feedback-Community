@@ -75,8 +75,8 @@ return {
   CaliCommonStep2 = "Place your Stabilizer Rx horizontal with the back facing up.",
   CaliCommonStep3 = "Place your Stabilizer Rx vertical on its short side with the label tilted to the left.",
   CaliCommonStep4 = "Place your Stabilizer Rx vertical on its short side with the label tilted to the right.",
-  CaliCommonStep5 = "Place your Stabilizer Rx on its long side with the label the right way up.",
-  CaliCommonStep6 = "Place your Stabilizer Rx on its long side with the label upside down.",
+  CaliCommonStep5 = "Place your Stabilizer Rx on its narrow long side with the label the right way up.",
+  CaliCommonStep6 = "Place your Stabilizer Rx on its narrow long side with the label upside down.",
 
   CaliFinished = "Calibration finished. You can exit this page now",
 
